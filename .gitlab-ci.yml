@@ -3,8 +3,9 @@ variables:
 
 platformio:
   before_script:
-    - apt-get update -qq && apt-get install -y -qq python3-pip
-    - pip3 install platformio
+    - apt-get update -qq && apt-get install -y -qq pipx
+    - pipx install platformio
+    - export PATH="$PATH:~/.local/bin"
     - platformio lib --global install ArduinoJson TaskScheduler PubSubClient ESPAsyncTCP AsyncTCP
   script:
     - platformio ci --lib="." --board=nodemcuv2 examples/mqttBridge/mqttBridge.ino
