@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# TODO: Move the install part to separate script (here and gitlab-ci.yml)
 export PATH=$PATH:./bin
 
 wget https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh
