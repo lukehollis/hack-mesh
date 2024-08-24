@@ -125,6 +125,10 @@ class Mesh : public ntp::MeshTime, public plugin::PackageHandler<T> {
    */
   bool isRoot() { return this->root; };
 
+
+  /**
+   * Change the internal log level
+   */
   void setDebugMsgTypes(uint16_t types) { Log.setLogLevel(types); }
 
   /**

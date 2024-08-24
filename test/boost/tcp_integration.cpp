@@ -138,8 +138,8 @@ SCENARIO("We can send a message using our Nodes class") {
 
   REQUIRE(layout::size(n.nodes[0]->asNodeTree()) == 12);
 
-  int x = 0;
-  int y = 0;
+  size_t x = 0;
+  size_t y = 0;
   std::string z;
   n.nodes[0]->onReceive([&x, &y, &z](auto id, auto msg) {
     ++x;

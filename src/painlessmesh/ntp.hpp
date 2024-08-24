@@ -9,6 +9,14 @@
 #define TIME_SYNC_ACCURACY 5000  // Minimum time sync accuracy (5ms
 #endif
 
+#ifndef MIN_LARGE_OFFSET_STEP
+#define MIN_LARGE_OFFSET_STEP 500  // Minimum offset size before softening
+#endif
+
+#ifndef MAX_CPU_TRIP_RATIO
+#define MAX_CPU_TRIP_RATIO 85  // Maximum ratio between remote cpu time and trip time for NTP calc to be reasonable
+#endif
+
 #include "Arduino.h"
 
 #include "painlessmesh/callback.hpp"
@@ -47,8 +55,11 @@ inline int32_t clockOffset(uint32_t time0, uint32_t time1, uint32_t time2,
       ((int32_t)(time1 - time0) / 2) + ((int32_t)(time2 - time3) / 2);
 
   // Take small steps to avoid over correction
-  if (offset < 0.5 * TASK_SECOND && offset > 4) offset = offset / 4;
-  return offset;
+  int32_t signedOffset = (int32_t)offset;
+  if (abs(signedOffset) < MIN_LARGE_OFFSET_STEP && abs(signedOffset) > 4) signedOffset = signedOffset / 4;
+  // Discard outliers with excessive trip to cpu ratios
+  if ((time3-time0) > (time2-time1)*MAX_CPU_TRIP_RATIO) signedOffset = 0;
+  return signedOffset;
 }
 
 /**
@@ -140,7 +151,7 @@ void handleTimeSync(T& mesh, painlessmesh::protocol::TimeSync timeSync,
         mesh.nodeTimeAdjustedCallback(offset);
       }
 
-      if (offset < TIME_SYNC_ACCURACY && offset > -TIME_SYNC_ACCURACY) {
+      if ((offset < TIME_SYNC_ACCURACY) && (offset > -TIME_SYNC_ACCURACY) && (offset != 0)) {
         // mark complete only if offset was less than 10 ms
         conn->timeSyncTask.delay(TIME_SYNC_INTERVAL);
         Log(logger::S_TIME,
