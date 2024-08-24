@@ -16,8 +16,6 @@
 #endif
 #endif
 
-
-
 namespace painlessmesh {
 namespace plugin {
 
@@ -99,10 +97,12 @@ class Announce : public BroadcastPackage {
     return jsonObj;
   }
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const {
     return JSON_OBJECT_SIZE(noJsonFields + 5) +
            round(1.1 * (md5.length() + hardware.length() + role.length()));
   }
+#endif
 
  protected:
   Announce(int type, router::Type routing) : BroadcastPackage(type) {
@@ -154,10 +154,12 @@ class DataRequest : public Announce {
 
   static DataRequest replyTo(const Data& d, size_t partNo);
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const {
     return JSON_OBJECT_SIZE(noJsonFields + 5 + 2) +
            round(1.1 * (md5.length() + hardware.length() + role.length()));
   }
+#endif
 
  protected:
   DataRequest(int type) : Announce(type, router::SINGLE) {}
@@ -197,11 +199,13 @@ class Data : public DataRequest {
     return d;
   }
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const {
     return JSON_OBJECT_SIZE(noJsonFields + 5 + 2 + 1) +
            round(1.1 * (md5.length() + hardware.length() + role.length() +
                         data.length()));
   }
+#endif
 };
 
 inline DataRequest DataRequest::replyTo(const Data& d, size_t partNo) {
@@ -259,52 +263,58 @@ class State : public protocol::PackageInterface {
     return jsonObj;
   }
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const {
     return JSON_OBJECT_SIZE(3) +
            round(1.1 * (md5.length() + hardware.length() + role.length()));
   }
+#endif
 
   std::shared_ptr<Task> task;
 };
 
-typedef std::function<size_t(painlessmesh::plugin::ota::DataRequest, char* buffer)> otaDataPacketCallbackType_t;
+typedef std::function<size_t(painlessmesh::plugin::ota::DataRequest,
+                             char* buffer)>
+    otaDataPacketCallbackType_t;
 
 template <class T>
-void addSendPackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& mesh,
-                        otaDataPacketCallbackType_t callback,size_t otaPartSize){
-    using namespace logger;
-    #if defined(ESP32) || defined(ESP8266)
+void addSendPackageCallback(Scheduler& scheduler,
+                            plugin::PackageHandler<T>& mesh,
+                            otaDataPacketCallbackType_t callback,
+                            size_t otaPartSize) {
+  using namespace logger;
+#if defined(ESP32) || defined(ESP8266)
 
-    mesh.onPackage(11,[&mesh,callback,otaPartSize](painlessmesh::protocol::Variant variant){
-      
-      auto pkg = variant.to<painlessmesh::plugin::ota::DataRequest>();
-      char buffer[otaPartSize+1];
-      memset(buffer, 0,otaPartSize+1);
-      auto size = callback(pkg,buffer);
-      // Handle zero size
-      if(!size){
-        // No data is available by the user app. 
+  mesh.onPackage(11, [&mesh, callback,
+                      otaPartSize](painlessmesh::protocol::Variant variant) {
+    auto pkg = variant.to<painlessmesh::plugin::ota::DataRequest>();
+    char buffer[otaPartSize + 1];
+    memset(buffer, 0, otaPartSize + 1);
+    auto size = callback(pkg, buffer);
+    // Handle zero size
+    if (!size) {
+      // No data is available by the user app.
 
-        // todo - doubtful, shall we return true or false. What is the purpose of this return value.  
-        return true;
-      }
-      //Encode data as base64 so there are no null characters and can be shown in plaintext
-      auto b64Data = painlessmesh::base64::encode((unsigned char * )buffer,size);
-      auto reply =
-              painlessmesh::plugin::ota::Data::replyTo(pkg,
-                                b64Data,
-                                 pkg.partNo);
-      mesh.sendPackage(&reply);
+      // todo - doubtful, shall we return true or false. What is the purpose of
+      // this return value.
       return true;
-    });
+    }
+    // Encode data as base64 so there are no null characters and can be shown in
+    // plaintext
+    auto b64Data = painlessmesh::base64::encode((unsigned char*)buffer, size);
+    auto reply =
+        painlessmesh::plugin::ota::Data::replyTo(pkg, b64Data, pkg.partNo);
+    mesh.sendPackage(&reply);
+    return true;
+  });
 
-    #endif
+#endif
 }
 
-
 template <class T>
-void addReceivePackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& mesh,
-                        TSTRING role = "") {
+void addReceivePackageCallback(Scheduler& scheduler,
+                               plugin::PackageHandler<T>& mesh,
+                               TSTRING role = "") {
   using namespace logger;
 #if defined(ESP32) || defined(ESP8266)
   auto currentFW = std::make_shared<State>();
@@ -314,11 +324,11 @@ void addReceivePackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& 
 #ifdef ESP32
   SPIFFS.begin(true);  // Start the SPI Flash Files System
   if (SPIFFS.exists(currentFW->ota_fn)) {
-  auto file = SPIFFS.open(currentFW->ota_fn, "r");
+    auto file = SPIFFS.open(currentFW->ota_fn, "r");
 #else
   LittleFS.begin();  // Start the SPI Flash Files System
   if (LittleFS.exists(currentFW->ota_fn)) {
-  auto file = LittleFS.open(currentFW->ota_fn, "r");
+    auto file = LittleFS.open(currentFW->ota_fn, "r");
 #endif
     TSTRING msg = "";
     while (file.available()) {
@@ -343,7 +353,8 @@ void addReceivePackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& 
         // Either already have it, or already updating to it
         return false;
       else {
-        auto request = DataRequest::replyTo(pkg, mesh.getNodeId(), updateFW->partNo);
+        auto request =
+            DataRequest::replyTo(pkg, mesh.getNodeId(), updateFW->partNo);
         updateFW->md5 = pkg.md5;
         // enable the request task
         updateFW->task =
@@ -407,17 +418,19 @@ void addReceivePackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& 
         //       check md5, reboot
         if (Update.end(true)) {  // true to set the size to the
                                  // current progress
-        #ifdef ESP32                   
+#ifdef ESP32
           auto file = SPIFFS.open(updateFW->ota_fn, "w");
           if (!file) {
-            Log(ERROR, "handleOTA(): Unable to write md5 of new update to the SPIFFS file. This will result in endless update loops for OTA\n");
+            Log(ERROR,
+                "handleOTA(): Unable to write md5 of new update to the SPIFFS "
+                "file. This will result in endless update loops for OTA\n");
           }
-        #else
+#else
           auto file = LittleFS.open(updateFW->ota_fn, "w");
           if (!file) {
             Log(ERROR, "handleOTA(): Unable to write md5 of new binary to the LittleFS file. This will result in endless update loops for OTA\n");
           }
-        #endif
+#endif
 
           String msg;
           auto var = protocol::Variant(updateFW.get());
@@ -442,7 +455,7 @@ void addReceivePackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& 
         auto request = DataRequest::replyTo(pkg, updateFW->partNo);
         updateFW->task->setCallback(
             [request, &mesh]() { mesh.sendPackage(&request); });
-        //updateFW->task->disable();
+        // updateFW->task->disable();
         updateFW->task->restart();
       }
     }
@@ -456,4 +469,3 @@ void addReceivePackageCallback(Scheduler& scheduler, plugin::PackageHandler<T>& 
 }  // namespace painlessmesh
 
 #endif
-
