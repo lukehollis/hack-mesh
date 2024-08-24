@@ -46,6 +46,28 @@ If platformio is used to install the library, then the dependency will be instal
 
 StartHere is a basic how to use example. It blinks built-in LED (in ESP-12) as many times as nodes are connected to the mesh. Further examples are under the examples directory and shown on the platformio [page](http://platformio.org/lib/show/1269/painlessMesh).
 
+### Development on your own machine
+
+After cloning the repository, you will need to initialize and update the submodules.
+
+```
+git submodule init 
+git submodule update
+```
+
+After that you can compile the library using the following commands
+
+```
+cmake -G Ninja
+ninja
+```
+
+This will compile a number of test files under `./bin/catch_` that can be run. For example using:
+
+```
+run-parts --regex catch_ bin/
+```
+
 ## Getting help
 
 There is help available from a variety of sources:
