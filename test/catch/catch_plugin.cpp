@@ -29,7 +29,9 @@ class CustomPackage : public plugin::SinglePackage {
     return jsonObj;
   }
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const { return JSON_OBJECT_SIZE(noJsonFields + 1); }
+#endif
 };
 
 class BCustomPackage : public plugin::BroadcastPackage {
@@ -48,7 +50,9 @@ class BCustomPackage : public plugin::BroadcastPackage {
     return jsonObj;
   }
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const { return JSON_OBJECT_SIZE(noJsonFields + 1); }
+#endif
 };
 
 class MockConnection : public layout::Neighbour {
