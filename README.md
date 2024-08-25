@@ -40,7 +40,7 @@ painlessMesh makes use of the following libraries, which can be installed throug
 - [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) (ESP8266)
 - [AsyncTCP](https://github.com/me-no-dev/AsyncTCP) (ESP32)
 
-If platformio is used to install the library, then the dependency will be installed automatically.
+If platformio is used to install the library, then the dependencies will be installed automatically.
 
 ### Examples
 
