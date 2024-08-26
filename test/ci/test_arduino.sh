@@ -19,5 +19,7 @@ arduino-cli lib install ArduinoJson --config-dir test/ci/
 arduino-cli lib install TaskScheduler --config-dir test/ci/
 arduino-cli lib install AsyncTCP --config-dir test/ci/
 
-arduino-cli compile --fqbn esp32:esp32:esp32 examples/startHere/startHere.ino --config-dir test/ci/
-arduino-cli compile --fqbn esp32:esp32:esp32 examples/namedMesh/namedMesh.ino --config-dir test/ci/
+arduino-cli compile --fqbn esp32:esp32:esp32 examples/startHere/startHere.ino --config-dir test/ci/ &&
+arduino-cli compile --fqbn esp32:esp32:esp32 examples/namedMesh/namedMesh.ino --config-dir test/ci/ &&
+arduino-cli compile --fqbn esp32:esp32:esp32 examples/otaReceiver/otaReceiver.ino --config-dir test/ci/ &&
+arduino-cli compile --fqbn esp32:esp32:esp32 examples/otaSender/otaSender.ino --config-dir test/ci/

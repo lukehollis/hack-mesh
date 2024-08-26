@@ -83,9 +83,11 @@ class PerformancePackage : public plugin::BroadcastPackage {
     return jsonObj;
   }
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const {
     return JSON_OBJECT_SIZE(4 + 5) + round(2 * (hardware.length()));
   }
+#endif
 };
 
 /// Numbers to track for each node we receive PerformancePackages from
@@ -124,19 +126,29 @@ class TrackMap : public protocol::PackageInterface,
   JsonObject addTo(JsonObject&& jsonObj) const {
     jsonObj["event"] = "performance";
     // Start array
+#if ARDUINOJSON_VERSION_MAJOR == 7
+    auto jsonArr = jsonObj["nodes"].to<JsonArray>();
+#else
     auto jsonArr = jsonObj.createNestedArray("nodes");
+#endif
     // for each in map do
     for (auto&& pair : (*this)) {
+#if ARDUINOJSON_VERSION_MAJOR == 7
+      JsonObject obj = jsonArr.add<JsonObject>();
+#else
       auto obj = jsonArr.createNestedObject();
+#endif
       pair.second.addTo(obj);
     }
     return jsonObj;
   }  // namespace performance
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
   size_t jsonObjectSize() const {
     return JSON_OBJECT_SIZE(2 + 15) + JSON_ARRAY_SIZE(this->size()) +
-           this->size()*(JSON_OBJECT_SIZE(9) + 4 * 100);
+           this->size() * (JSON_OBJECT_SIZE(9) + 4 * 100);
   }
+#endif
 };  // namespace plugin
 
 template <class T>
@@ -170,7 +182,7 @@ void begin(T& mesh, double frequency = 2) {
   });
 
   sendPkg->from = mesh.getNodeId();
-  mesh.addTask(frequency*TASK_SECOND, TASK_FOREVER, [sendPkg, &mesh]() {
+  mesh.addTask(frequency * TASK_SECOND, TASK_FOREVER, [sendPkg, &mesh]() {
     ++sendPkg->id;
     sendPkg->time = mesh.getNodeTime();
     sendPkg->stability = mesh.stability;

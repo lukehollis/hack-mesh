@@ -410,6 +410,8 @@ SCENARIO("A variant can printTo a package", "[Variant][protocol]") {
   }
 }
 
+// Above version 7 arduinojson will grow the buffer to fit
+#if ARDUINOJSON_VERSION_MAJOR < 7
 SCENARIO("The Variant type properly carries over errors",
          "[Variant][protocol][error]") {
   GIVEN("A large and small NodeSyncReply pkg") {
@@ -431,6 +433,7 @@ SCENARIO("The Variant type properly carries over errors",
     }
   }
 }
+#endif
 
 SCENARIO(
     "The construction of a Time package automatically sets the correct time "

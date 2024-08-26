@@ -19,7 +19,10 @@ size_t logServerId = 0;
 
 // Send message to the logServer every 10 seconds 
 Task myLoggingTask(10000, TASK_FOREVER, []() {
-#if ARDUINOJSON_VERSION_MAJOR==6
+#if ARDUINOJSON_VERSION_MAJOR==7
+        JsonDocument jsonBuffer;
+        JsonObject msg = jsonBuffer.to<JsonObject>();
+#elif ARDUINOJSON_VERSION_MAJOR==6
         DynamicJsonDocument jsonBuffer(1024);
         JsonObject msg = jsonBuffer.to<JsonObject>();
 #else
@@ -30,7 +33,7 @@ Task myLoggingTask(10000, TASK_FOREVER, []() {
     msg["value"] = random(0, 180);
 
     String str;
-#if ARDUINOJSON_VERSION_MAJOR==6
+#if ARDUINOJSON_VERSION_MAJOR>=6
     serializeJson(msg, str);
 #else
     msg.printTo(str);
@@ -41,7 +44,7 @@ Task myLoggingTask(10000, TASK_FOREVER, []() {
         mesh.sendSingle(logServerId, str);
 
     // log to serial
-#if ARDUINOJSON_VERSION_MAJOR==6
+#if ARDUINOJSON_VERSION_MAJOR>=6
     serializeJson(msg, Serial);
 #else
     msg.printTo(Serial);
@@ -71,7 +74,15 @@ void receivedCallback( uint32_t from, String &msg ) {
   Serial.printf("logClient: Received from %u msg=%s\n", from, msg.c_str());
 
   // Saving logServer
-#if ARDUINOJSON_VERSION_MAJOR==6
+#if ARDUINOJSON_VERSION_MAJOR==7
+  JsonDocument jsonBuffer;
+  DeserializationError error = deserializeJson(jsonBuffer, msg);
+  if (error) {
+    Serial.printf("DeserializationError\n");
+    return;
+  }
+  JsonObject root = jsonBuffer.as<JsonObject>();
+#elif ARDUINOJSON_VERSION_MAJOR==6
   DynamicJsonDocument jsonBuffer(1024 + msg.length());
   DeserializationError error = deserializeJson(jsonBuffer, msg);
   if (error) {
