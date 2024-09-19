@@ -11,6 +11,9 @@
 #ifdef ESP32
 #include <AsyncTCP.h>
 #include <WiFi.h>
+#if ESP_ARDUINO_VERSION_MAJOR >= 3
+#include "esp_mac.h"  // required for core 3.x - exposes esp_mac_type_t values
+#endif
 #elif defined(ESP8266)
 #include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
