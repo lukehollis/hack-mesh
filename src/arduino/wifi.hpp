@@ -68,9 +68,13 @@ class Mesh : public painlessmesh::Mesh<Connection> {
     _meshPort = port;
 
     uint8_t MAC[] = {0, 0, 0, 0, 0, 0};
+#if ESP_ARDUINO_VERSION_MAJOR >= 3
+    esp_read_mac(MAC, ESP_MAC_WIFI_SOFTAP);
+#else
     if (WiFi.softAPmacAddress(MAC) == 0) {
       Log(ERROR, "init(): WiFi.softAPmacAddress(MAC) failed.\n");
     }
+#endif
     uint32_t nodeId = tcp::encodeNodeId(MAC);
     if (nodeId == 0) Log(ERROR, "NodeId set to 0\n");
 
