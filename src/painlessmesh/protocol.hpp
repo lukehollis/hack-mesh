@@ -127,13 +127,23 @@ class NodeTree : public PackageInterface {
   }
 
   NodeTree(JsonObject jsonObj) {
+#if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj.containsKey("root")) root = jsonObj["root"].as<bool>();
     if (jsonObj.containsKey("nodeId"))
+#else
+
+    if (jsonObj["root"].is<bool>()) root = jsonObj["root"].as<bool>();
+    if (jsonObj["nodeId"].is<uint32_t>())
+#endif
       nodeId = jsonObj["nodeId"].as<uint32_t>();
     else
       nodeId = jsonObj["from"].as<uint32_t>();
 
+#if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj.containsKey("subs")) {
+#else
+    if (jsonObj["subs"].is<JsonArray>()) {
+#endif
       auto jsonArr = jsonObj["subs"].as<JsonArray>();
       for (size_t i = 0; i < jsonArr.size(); ++i) {
         subs.push_back(NodeTree(jsonArr[i].as<JsonObject>()));
@@ -325,12 +335,21 @@ class TimeSync : public PackageInterface {
     dest = jsonObj["dest"].as<uint32_t>();
     from = jsonObj["from"].as<uint32_t>();
     msg.type = jsonObj["msg"]["type"].as<int>();
+#if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj["msg"].containsKey("t0"))
       msg.t0 = jsonObj["msg"]["t0"].as<uint32_t>();
     if (jsonObj["msg"].containsKey("t1"))
       msg.t1 = jsonObj["msg"]["t1"].as<uint32_t>();
     if (jsonObj["msg"].containsKey("t2"))
       msg.t2 = jsonObj["msg"]["t2"].as<uint32_t>();
+#else
+    if (jsonObj["msg"]["t0"].is<uint32_t>())
+      msg.t0 = jsonObj["msg"]["t0"].as<uint32_t>();
+    if (jsonObj["msg"]["t1"].is<uint32_t>())
+      msg.t1 = jsonObj["msg"]["t1"].as<uint32_t>();
+    if (jsonObj["msg"]["t2"].is<uint32_t>())
+      msg.t2 = jsonObj["msg"]["t2"].as<uint32_t>();
+#endif
   }
 
   JsonObject addTo(JsonObject&& jsonObj) const {
@@ -614,7 +633,11 @@ class Variant {
    * Package routing method
    */
   router::Type routing() {
+#if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj.containsKey("routing"))
+#else
+    if (jsonObj["routing"].is<int>())
+#endif
       return (router::Type)jsonObj["routing"].as<int>();
 
     auto type = this->type();
@@ -630,7 +653,11 @@ class Variant {
    * Destination node of the package
    */
   uint32_t dest() {
+#if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj.containsKey("dest")) return jsonObj["dest"].as<uint32_t>();
+#else
+    if (jsonObj["dest"].is<uint32_t>()) return jsonObj["dest"].as<uint32_t>();
+#endif
     return 0;
   }
 

@@ -83,7 +83,11 @@ class Announce : public BroadcastPackage {
     md5 = jsonObj["md5"].as<TSTRING>();
     hardware = jsonObj["hardware"].as<TSTRING>();
     role = jsonObj["role"].as<TSTRING>();
+#if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj.containsKey("forced")) forced = jsonObj["forced"];
+#else
+    if (jsonObj["forced"].is<bool>()) forced = jsonObj["forced"];
+#endif
     noPart = jsonObj["noPart"];
   }
 

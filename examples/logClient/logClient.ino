@@ -94,7 +94,11 @@ void receivedCallback( uint32_t from, String &msg ) {
   DynamicJsonBuffer jsonBuffer;
   JsonObject& root = jsonBuffer.parseObject(msg);
 #endif
+#if ARDUINOJSON_VERSION_MAJOR < 7
   if (root.containsKey("topic")) {
+#else
+  if (root["topic"].is<String>()) {
+#endif
       if (String("logServer").equals(root["topic"].as<String>())) {
           // check for on: true or false
           logServerId = root["nodeId"];
