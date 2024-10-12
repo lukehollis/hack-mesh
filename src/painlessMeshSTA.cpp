@@ -52,7 +52,7 @@ void ICACHE_FLASH_ATTR StationScan::stationScan() {
   });
   mesh->mScheduler->addTask(asyncTask);
   asyncTask.enableDelayed();
-  WiFi.scanNetworks(true, true, mesh->_meshChannel);
+  WiFi.scanNetworks(true, true, 0);
 #endif
 
   task.delay(10 * SCAN_INTERVAL);  // Scan should be completed by then and next
