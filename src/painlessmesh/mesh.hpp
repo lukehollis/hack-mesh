@@ -541,7 +541,7 @@ class Connection : public painlessmesh::layout::Neighbour,
     this->initialize(mesh->mScheduler);
   }
 
-  bool addMessage(TSTRING msg, bool priority = false) {
+  bool addMessage(const TSTRING& msg, bool priority = false) {
     return this->write(msg, priority);
   }
 
