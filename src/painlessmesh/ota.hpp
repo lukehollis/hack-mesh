@@ -96,6 +96,14 @@ class Announce : public BroadcastPackage {
    * Mainly usefull when testing updates etc.
    */
   bool forced = false;
+
+  /** Receive broadcast chunks. The default behavior is to have each node request and receive
+   * each of its firwmare payload chunks, however this can in some cases create a lot of
+   * additional network traffic. If broadcasted is true, the root node will act on behalf of
+   * all other nodes in leading the request for packets.
+   */
+  bool broadcasted = false;
+
   size_t noPart;
 
   Announce() : BroadcastPackage(10) {}
@@ -106,8 +114,10 @@ class Announce : public BroadcastPackage {
     role = jsonObj["role"].as<TSTRING>();
 #if ARDUINOJSON_VERSION_MAJOR < 7
     if (jsonObj.containsKey("forced")) forced = jsonObj["forced"];
+    if (jsonObj.containsKey("broadcasted")) broadcasted = jsonObj["broadcasted"];
 #else
     if (jsonObj["forced"].is<bool>()) forced = jsonObj["forced"];
+    if (jsonObj["broadcasted"].is<bool>()) broadcasted = jsonObj["broadcasted"];
 #endif
     noPart = jsonObj["noPart"];
   }
@@ -119,6 +129,7 @@ class Announce : public BroadcastPackage {
     jsonObj["role"] = role;
     if (forced) jsonObj["forced"] = forced;
     jsonObj["noPart"] = noPart;
+    jsonObj["broadcasted"] = broadcasted;
     return jsonObj;
   }
 
@@ -264,6 +275,7 @@ class State : public protocol::PackageInterface {
   TSTRING role;
   size_t noPart = 0;
   size_t partNo = 0;
+  bool broadcasted = false;
   TSTRING ota_fn = "/ota_fw.json";
 
   State() {}
@@ -272,6 +284,7 @@ class State : public protocol::PackageInterface {
     md5 = jsonObj["md5"].as<TSTRING>();
     hardware = jsonObj["hardware"].as<TSTRING>();
     role = jsonObj["role"].as<TSTRING>();
+    broadcasted = jsonObj["broadcasted"].as<bool>();
   }
 
   State(const Announce& ann) {
@@ -279,12 +292,14 @@ class State : public protocol::PackageInterface {
     hardware = ann.hardware;
     role = ann.role;
     noPart = ann.noPart;
+    broadcasted = ann.broadcasted;
   }
 
   JsonObject addTo(JsonObject&& jsonObj) const {
     jsonObj["role"] = role;
     jsonObj["md5"] = md5;
     jsonObj["hardware"] = hardware;
+    jsonObj["broadcasted"] = broadcasted;
     return jsonObj;
   }
 
