@@ -236,6 +236,7 @@ class AsyncServer {
     setsockopt(mAcceptor.native_handle(), SOL_SOCKET,
                SO_REUSEADDR | SO_REUSEPORT, &one, sizeof(one));
     boost::asio::ip::tcp::endpoint endpoint(boost::asio::ip::tcp::v4(), _port);
+    mAcceptor.set_option( boost::asio::socket_base::reuse_address(true) );
     mAcceptor.set_option( boost::asio::ip::tcp::no_delay(true) );
     mAcceptor.set_option( boost::asio::socket_base::send_buffer_size( 65536 ) );
     mAcceptor.set_option( boost::asio::socket_base::receive_buffer_size( 65536 ) );
