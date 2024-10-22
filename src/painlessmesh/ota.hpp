@@ -56,6 +56,15 @@ namespace plugin {
  */
 namespace ota {
 
+/**
+ * Operation codes for various firmware states
+ */
+enum class OTA_OP_CODES {
+  ANNOUNCE = 10,      // Announce a new update
+  DATA_REQUEST = 11,  // Request data from host
+  DATA = 12,          // Inbound data to nodes
+};
+
 /** Package used by the firmware distribution node to announce new version
  * available
  *
@@ -300,8 +309,8 @@ void addSendPackageCallback(Scheduler& scheduler,
                             size_t otaPartSize) {
   using namespace logger;
 #if defined(ESP32) || defined(ESP8266)
-
-  mesh.onPackage(11, [&mesh, callback,
+mesh.
+  mesh.onPackage((int)OTA_OP_CODES::DATA_REQUEST, [&mesh, callback,
                       otaPartSize](painlessmesh::protocol::Variant variant) {
     auto pkg = variant.to<painlessmesh::plugin::ota::DataRequest>();
     char buffer[otaPartSize + 1];
@@ -358,7 +367,7 @@ void addReceivePackageCallback(Scheduler& scheduler,
     }
   }
 
-  mesh.onPackage(10, [currentFW, updateFW, &mesh,
+  mesh.onPackage((int)OTA_OP_CODES::ANNOUNCE, [currentFW, updateFW, &mesh,
                       &scheduler](protocol::Variant variant) {
     // convert variant to Announce
     auto pkg = variant.to<Announce>();
@@ -390,7 +399,7 @@ void addReceivePackageCallback(Scheduler& scheduler,
   //   return false;
   // });
 
-  mesh.onPackage(12, [currentFW, updateFW, &mesh,
+  mesh.onPackage((int)OTA_OP_CODES::DATA, [currentFW, updateFW, &mesh,
                       &scheduler](protocol::Variant variant) {
     auto pkg = variant.to<Data>();
     // Check whether it is a new part, of correct md5 role etc etc
