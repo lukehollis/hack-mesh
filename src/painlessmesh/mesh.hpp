@@ -90,9 +90,9 @@ class Mesh : public ntp::MeshTime, public plugin::PackageHandler<T> {
     painlessmesh::plugin::ota::addSendPackageCallback(
         *this->mScheduler, (*this), callback, otaPartSize);
   }
-  void initOTAReceive(TSTRING role = "") {
+  void initOTAReceive(TSTRING role = "", std::function<void(int, int)> progress_cb = NULL) {
     painlessmesh::plugin::ota::addReceivePackageCallback(*this->mScheduler,
-                                                         (*this), role);
+                                                         (*this), role, progress_cb);
   }
 #endif
 
@@ -492,7 +492,7 @@ class Connection : public painlessmesh::layout::Neighbour,
   void initTasks() {
     auto self = this->shared_from_this();
     auto mesh = this->mesh;
-    this->onReceive([mesh, self](TSTRING str) {
+    this->onReceive([mesh, self](const TSTRING& str) {
       auto variant = painlessmesh::protocol::Variant(str);
       router::routePackage<painlessmesh::Connection>(
           (*self->mesh), self->shared_from_this(), str,
