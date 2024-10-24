@@ -7,14 +7,26 @@
 #include "painlessmesh/logger.hpp"
 #include "painlessmesh/plugin.hpp"
 
+#if !defined(USE_FS_SPIFFS) && !defined(USE_FS_LITTLEFS)
 #if defined(ESP32) || defined(ESP8266)
 #ifdef ESP32
-#include <SPIFFS.h>
-#include <Update.h>
+#define USE_FS_SPIFFS
 #else
+#define USE_FS_LITTLEFS
+#endif
+#endif
+#endif
+
+#ifdef ESP32
+#include <Update.h>
+#endif
+
+#if defined(USE_FS_SPIFFS)
+#include <SPIFFS.h>
+#elif defined(USE_FS_LITTLEFS)
 #include <LittleFS.h>
 #endif
-#endif
+
 
 namespace painlessmesh {
 namespace plugin {
@@ -325,7 +337,7 @@ void addReceivePackageCallback(Scheduler& scheduler,
   currentFW->role = role;
   auto updateFW = std::make_shared<State>();
   updateFW->role = role;
-#ifdef ESP32
+#ifdef USE_FS_SPIFFS
   SPIFFS.begin(true);  // Start the SPI Flash Files System
   if (SPIFFS.exists(currentFW->ota_fn)) {
     auto file = SPIFFS.open(currentFW->ota_fn, "r");
@@ -422,7 +434,7 @@ void addReceivePackageCallback(Scheduler& scheduler,
         //       check md5, reboot
         if (Update.end(true)) {  // true to set the size to the
                                  // current progress
-#ifdef ESP32
+#ifdef USE_FS_SPIFFS
           auto file = SPIFFS.open(updateFW->ota_fn, "w");
           if (!file) {
             Log(ERROR,
