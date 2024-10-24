@@ -185,6 +185,7 @@ class DataRequest : public Announce {
     req.noPart = ann.noPart;
     req.partNo = partNo;
     req.from = from;
+    req.broadcasted = ann.broadcasted;
     return req;
   }
 
@@ -232,6 +233,7 @@ class Data : public DataRequest {
     d.noPart = req.noPart;
     d.partNo = partNo;
     d.data = data;
+    d.broadcasted = req.broadcasted;
     return d;
   }
 
@@ -254,6 +256,7 @@ inline DataRequest DataRequest::replyTo(const Data& d, size_t partNo) {
   req.forced = d.forced;
   req.noPart = d.noPart;
   req.partNo = partNo;
+  req.broadcasted = d.broadcasted;
   return req;
 }
 
@@ -490,8 +493,8 @@ void addReceivePackageCallback(Scheduler& scheduler,
             file.close();
 
             Log(DEBUG, "handleOTA(): OTA Success! %s, %s\n", msg.c_str(), updateFW->role.c_str());
-            // Delay restart by 1 second to allow mesh activity to finish
-            mesh.addTask(scheduler, TASK_SECOND, TASK_ONCE,
+            // Delay restart by 2 seconds to allow mesh activity to finish
+            mesh.addTask(scheduler, 2 * TASK_SECOND, TASK_ONCE,
                          []() { ESP.restart(); })->enableDelayed();
           } else {
             Log(DEBUG, "handleOTA(): OTA failed!\n");
@@ -515,8 +518,21 @@ void addReceivePackageCallback(Scheduler& scheduler,
           }
         }
       } else {
-        // We are out-of-sequence, our update might be stalled
-        Log(DEBUG, "Out of sequence packet! We may have missed a packet?");
+        // We are out-of-sequence, resume with non-broadcasted update
+        if (updateFW->broadcasted && pkg.broadcasted) {
+          Log(DEBUG, "Out of sequence packet! We may have missed a packet?");
+          // Drop of out broadcasted mode
+          updateFW->broadcasted = false;
+          auto request = DataRequest::replyTo(pkg, updateFW->partNo);
+          request.broadcasted = false;
+          updateFW->task =
+            mesh.addTask(scheduler, 30 * TASK_SECOND, 10,
+                        [request, &mesh]() { mesh.sendPackage(&request); });
+          updateFW->task->setOnDisable([updateFW]() {
+            Log(ERROR, "OTA: Did not receive the requested data.\n");
+            updateFW->md5 = "";
+          });
+        }
       }
     }
     return false;
