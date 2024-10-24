@@ -39,7 +39,7 @@ void ICACHE_FLASH_ATTR StationScan::stationScan() {
   Log(CONNECTION, "stationScan(): %s\n", ssid.c_str());
 
 #ifdef ESP32
-  WiFi.scanNetworks(true, true, false, 80, mesh->_meshChannel);
+  WiFi.scanNetworks(true, true, false, 300U,  0);
 #elif defined(ESP8266)
   // WiFi.scanNetworksAsync([&](int networks) { this->scanComplete(); }, true);
   // Try 600 times (60 seconds). If not completed after that, give up
@@ -52,7 +52,7 @@ void ICACHE_FLASH_ATTR StationScan::stationScan() {
   });
   mesh->mScheduler->addTask(asyncTask);
   asyncTask.enableDelayed();
-  WiFi.scanNetworks(true, true, mesh->_meshChannel);
+  WiFi.scanNetworks(true, true, 0);
 #endif
 
   task.delay(10 * SCAN_INTERVAL);  // Scan should be completed by then and next
@@ -83,6 +83,11 @@ void ICACHE_FLASH_ATTR StationScan::scanComplete() {
   for (auto i = 0; i < num; ++i) {
     WiFi_AP_Record_t record;
     record.ssid = WiFi.SSID(i);
+
+    if(WiFi.channel(i) != mesh->_meshChannel){
+      continue;
+    }
+
     if (record.ssid != ssid) {
       if (record.ssid.equals("") && mesh->_meshHidden) {
         // Hidden mesh
