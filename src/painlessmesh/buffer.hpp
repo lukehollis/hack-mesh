@@ -60,7 +60,7 @@ class ReceiveBuffer {
    * Get the oldest message from the buffer
    */
   T front() {
-    if (!empty()) return (*jsonStrings.begin());
+    if (!empty()) return jsonStrings.front();
     return T();
   }
 
@@ -117,7 +117,7 @@ class SentBuffer {
    *
    * High priority messages will be sent to the front of the buffer
    */
-  void push(T message, bool priority = false) {
+  void push(const T& message, bool priority = false) {
     if (priority) {
       if (clean)
         jsonStrings.push_front(message);

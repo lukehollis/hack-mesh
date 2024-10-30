@@ -46,6 +46,11 @@ class Layout {
    */
   uint32_t getNodeId() { return nodeId; }
 
+  /**
+   * Check whether this node is a root node.
+   */
+  bool isRoot() { return root; }
+
   protocol::NodeTree asNodeTree() {
     auto nt = protocol::NodeTree(nodeId, root);
     for (auto&& s : subs) {

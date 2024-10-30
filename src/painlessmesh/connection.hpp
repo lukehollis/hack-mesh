@@ -129,7 +129,7 @@ class BufferedConnection
     mConnected = false;
   }
 
-  bool write(TSTRING data, bool priority = false) {
+  bool write(const TSTRING& data, bool priority = false) {
     sentBuffer.push(data, priority);
     sentBufferTask.forceNextIteration();
     return true;
