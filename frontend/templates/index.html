@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Coordinates</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Styling the map */
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>GPS Coordinates on Map</h1>
+
+    
+
+    {% if warning != '' %}
+        <p>{{warning}}</p>
+
+    {% else %}
+        <!-- Map container -->
+        <div id="map"></div>
+    {% endif %}
+
+
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map (set the center and zoom level)
+        var map = L.map('map').setView([37.77403664, -122.30034617], 13);  // Default to a central location
+
+        // Add the OpenStreetMap tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers to the map for each coordinate pair
+
+        {% if warning == ''%}
+            {% for key, values in coordinates.items() %}
+                {% set coords = values[4][1:-1].split(',') %}
+                var lat = parseFloat("{{ coords[0] }}");
+                var lon = parseFloat("{{ coords[1] }}");
+
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup("<b>{{ values[0] }}</b><br>{{ values[3] }}<br>{{ values[1] }}, {{ values[2] }}")
+                    .openPopup();
+            {% endfor %}
+        {% else %}
+            
+        {% endif %}
+    </script>
+</body>
+</html>
