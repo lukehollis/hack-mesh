@@ -1,19 +1,20 @@
 #include <painlessMesh.h>
 #include "config.h"
-#include "gps_handler.h"
+#include "signal_handler.h"
 
 Scheduler userScheduler;
 painlessMesh mesh;
-GPSHandler gps;
+SignalHandler signalHandler;
 
-// Task to send location updates
-Task taskSendLocation(LOCATION_UPDATE_INTERVAL, TASK_FOREVER, []() {
-    String msg = gps.getLocationJson();
+// Task to send signal updates
+Task taskSendSignal(SIGNAL_UPDATE_INTERVAL, TASK_FOREVER, []() {
+    String msg = signalHandler.getSignalJson();
     mesh.sendBroadcast(msg);
 });
 
 void receivedCallback(uint32_t from, String &msg) {
     Serial.printf("Received from %u: %s\n", from, msg.c_str());
+    // Here we could process the received signal data if needed
 }
 
 void newConnectionCallback(uint32_t nodeId) {
@@ -37,12 +38,12 @@ void setup() {
     mesh.onChangedConnections(&changedConnectionCallback);
     
     // Add tasks
-    userScheduler.addTask(taskSendLocation);
-    taskSendLocation.enable();
+    userScheduler.addTask(taskSendSignal);
+    taskSendSignal.enable();
 }
 
 void loop() {
     mesh.update();
     userScheduler.execute();
-    gps.update();
+    signalHandler.update();
 }
