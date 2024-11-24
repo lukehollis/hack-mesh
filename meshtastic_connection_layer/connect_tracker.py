@@ -62,7 +62,7 @@ def main():
                             }
                             send_message(iface, data)
                             sent_ids.add(alert_id)
-                            time.sleep(15)  # Wait 30 seconds between messages
+                            time.sleep(1)  # Wait 30 seconds between messages
                 else:
                     print("No new alerts found.")
                 time.sleep(10)  # Poll for new alerts every 10 seconds
