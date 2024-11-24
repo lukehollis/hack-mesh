@@ -1,0 +1,866 @@
+{
+    "Heatmap_Data": [
+        {
+            "Latitude": 37.744860440827345,
+            "Longitude": -122.49659403199111,
+            "Signal_Strength": 79.14795166952914
+        },
+        {
+            "Latitude": 37.53320683227037,
+            "Longitude": -122.32010429031082,
+            "Signal_Strength": 55.288017001668955
+        },
+        {
+            "Latitude": 37.67874688108676,
+            "Longitude": -122.24586880795464,
+            "Signal_Strength": 2.431156762424036
+        },
+        {
+            "Latitude": 37.79122683584624,
+            "Longitude": -122.23529040984212,
+            "Signal_Strength": 11.753080989138864
+        },
+        {
+            "Latitude": 37.640235635427516,
+            "Longitude": -122.47587878458648,
+            "Signal_Strength": 13.917393862631055
+        },
+        {
+            "Latitude": 37.6354900985279,
+            "Longitude": -122.45947957755278,
+            "Signal_Strength": 5.45401763439547
+        },
+        {
+            "Latitude": 37.73848195387933,
+            "Longitude": -122.20261183091716,
+            "Signal_Strength": 71.06063852475457
+        },
+        {
+            "Latitude": 37.60053029660845,
+            "Longitude": -122.30988405466172,
+            "Signal_Strength": 42.67244111420828
+        },
+        {
+            "Latitude": 37.62282678857275,
+            "Longitude": -122.40669765236275,
+            "Signal_Strength": 52.74247246770024
+        },
+        {
+            "Latitude": 37.648029306203945,
+            "Longitude": -122.38753920149306,
+            "Signal_Strength": 49.07532699481961
+        },
+        {
+            "Latitude": 37.502752891266255,
+            "Longitude": -122.46385173699439,
+            "Signal_Strength": 21.828438701538666
+        },
+        {
+            "Latitude": 37.73988163612536,
+            "Longitude": -122.24513023007472,
+            "Signal_Strength": 84.7622077260003
+        },
+        {
+            "Latitude": 37.66589797411308,
+            "Longitude": -122.36842014497378,
+            "Signal_Strength": 77.83182611311035
+        },
+        {
+            "Latitude": 37.65036753913534,
+            "Longitude": -122.34955879291383,
+            "Signal_Strength": 11.554357587337726
+        },
+        {
+            "Latitude": 37.73416218228955,
+            "Longitude": -122.30549091937958,
+            "Signal_Strength": 13.288827508924717
+        },
+        {
+            "Latitude": 37.78762372506497,
+            "Longitude": -122.43360740056958,
+            "Signal_Strength": 92.94402192245245
+        },
+        {
+            "Latitude": 37.761843424629,
+            "Longitude": -122.43245364216726,
+            "Signal_Strength": 2.6959829119607592
+        },
+        {
+            "Latitude": 37.58622680286038,
+            "Longitude": -122.23675372415325,
+            "Signal_Strength": 3.9336403650062635
+        },
+        {
+            "Latitude": 37.67640805276538,
+            "Longitude": -122.41326361547682,
+            "Signal_Strength": 95.42616480327423
+        },
+        {
+            "Latitude": 37.698131614095054,
+            "Longitude": -122.27457733788597,
+            "Signal_Strength": 33.28827612362949
+        },
+        {
+            "Latitude": 37.70929622738266,
+            "Longitude": -122.33065650954498,
+            "Signal_Strength": 57.8669022317694
+        },
+        {
+            "Latitude": 37.77182152432001,
+            "Longitude": -122.21168212341223,
+            "Signal_Strength": 89.11646313474112
+        },
+        {
+            "Latitude": 37.58193361225638,
+            "Longitude": -122.43228140247925,
+            "Signal_Strength": 83.39840119270701
+        },
+        {
+            "Latitude": 37.69362530727485,
+            "Longitude": -122.28978210161782,
+            "Signal_Strength": 59.51903858047284
+        },
+        {
+            "Latitude": 37.78305825856907,
+            "Longitude": -122.4877082981444,
+            "Signal_Strength": 29.265496996133457
+        },
+        {
+            "Latitude": 37.72002627524068,
+            "Longitude": -122.3381008875544,
+            "Signal_Strength": 64.12887334399682
+        },
+        {
+            "Latitude": 37.73691324085393,
+            "Longitude": -122.46733971495829,
+            "Signal_Strength": 78.00828643997686
+        },
+        {
+            "Latitude": 37.67919226536437,
+            "Longitude": -122.4203124099717,
+            "Signal_Strength": 42.692544680910274
+        },
+        {
+            "Latitude": 37.562156675435446,
+            "Longitude": -122.25594129393514,
+            "Signal_Strength": 3.5058132717881607
+        },
+        {
+            "Latitude": 37.69615259491905,
+            "Longitude": -122.26891840705295,
+            "Signal_Strength": 64.89615420788311
+        },
+        {
+            "Latitude": 37.63528984989967,
+            "Longitude": -122.22715911183656,
+            "Signal_Strength": 57.41748798616864
+        },
+        {
+            "Latitude": 37.67549394135346,
+            "Longitude": -122.3793134088889,
+            "Signal_Strength": 56.67503344130568
+        },
+        {
+            "Latitude": 37.736075907380005,
+            "Longitude": -122.33369460553514,
+            "Signal_Strength": 13.15872421786234
+        },
+        {
+            "Latitude": 37.74510456320885,
+            "Longitude": -122.49400833206924,
+            "Signal_Strength": 81.26751461513135
+        },
+        {
+            "Latitude": 37.53117041308617,
+            "Longitude": -122.36491365501604,
+            "Signal_Strength": 79.19240528494137
+        },
+        {
+            "Latitude": 37.66420046206396,
+            "Longitude": -122.37994036854079,
+            "Signal_Strength": 99.17558020357417
+        },
+        {
+            "Latitude": 37.518771636822976,
+            "Longitude": -122.26409704468891,
+            "Signal_Strength": 87.52466897668661
+        },
+        {
+            "Latitude": 37.74769678477806,
+            "Longitude": -122.41293364799402,
+            "Signal_Strength": 12.764639662601828
+        },
+        {
+            "Latitude": 37.600568584897715,
+            "Longitude": -122.4678441449146,
+            "Signal_Strength": 7.622413709867704
+        },
+        {
+            "Latitude": 37.63156868586542,
+            "Longitude": -122.34570016017386,
+            "Signal_Strength": 28.364520634100387
+        },
+        {
+            "Latitude": 37.71353710785833,
+            "Longitude": -122.2986406724679,
+            "Signal_Strength": 30.4870511849333
+        },
+        {
+            "Latitude": 37.791407322366844,
+            "Longitude": -122.37273174327684,
+            "Signal_Strength": 62.84750818778107
+        },
+        {
+            "Latitude": 37.66675472413032,
+            "Longitude": -122.41212325457035,
+            "Signal_Strength": 28.37843320568115
+        },
+        {
+            "Latitude": 37.683466933396275,
+            "Longitude": -122.295263285958,
+            "Signal_Strength": 17.750656853041203
+        },
+        {
+            "Latitude": 37.55362750793237,
+            "Longitude": -122.2181335455435,
+            "Signal_Strength": 66.49667967355467
+        },
+        {
+            "Latitude": 37.55099980818404,
+            "Longitude": -122.47267757834616,
+            "Signal_Strength": 41.99528962776985
+        },
+        {
+            "Latitude": 37.511374229134674,
+            "Longitude": -122.36015448548734,
+            "Signal_Strength": 11.24799733407632
+        },
+        {
+            "Latitude": 37.59885455850333,
+            "Longitude": -122.46666061779364,
+            "Signal_Strength": 67.1722837021593
+        },
+        {
+            "Latitude": 37.76492116351246,
+            "Longitude": -122.28488419360144,
+            "Signal_Strength": 33.09342888329
+        },
+        {
+            "Latitude": 37.76980058518669,
+            "Longitude": -122.49028948478988,
+            "Signal_Strength": 21.870574032770264
+        },
+        {
+            "Latitude": 37.65967084409986,
+            "Longitude": -122.25774352261986,
+            "Signal_Strength": 24.077730393570164
+        },
+        {
+            "Latitude": 37.739409692379496,
+            "Longitude": -122.228952270037,
+            "Signal_Strength": 93.6984418369003
+        },
+        {
+            "Latitude": 37.7973392520956,
+            "Longitude": -122.49560551746447,
+            "Signal_Strength": 41.944130033468156
+        },
+        {
+            "Latitude": 37.55905565686589,
+            "Longitude": -122.49586296345656,
+            "Signal_Strength": 43.90547433590282
+        },
+        {
+            "Latitude": 37.50534041396254,
+            "Longitude": -122.36967795408898,
+            "Signal_Strength": 53.44718803359586
+        },
+        {
+            "Latitude": 37.550364796784834,
+            "Longitude": -122.37315779205458,
+            "Signal_Strength": 42.62840502754286
+        },
+        {
+            "Latitude": 37.78919460950844,
+            "Longitude": -122.26733266339703,
+            "Signal_Strength": 54.63985422084511
+        },
+        {
+            "Latitude": 37.720918213171984,
+            "Longitude": -122.40082004780933,
+            "Signal_Strength": 59.05916905519074
+        },
+        {
+            "Latitude": 37.641035282135164,
+            "Longitude": -122.279653880062,
+            "Signal_Strength": 30.602319963344904
+        },
+        {
+            "Latitude": 37.617905399922954,
+            "Longitude": -122.31058335024397,
+            "Signal_Strength": 9.574492584363469
+        },
+        {
+            "Latitude": 37.71718419112965,
+            "Longitude": -122.32405638790054,
+            "Signal_Strength": 37.85682578335552
+        },
+        {
+            "Latitude": 37.60715824296684,
+            "Longitude": -122.34138131419343,
+            "Signal_Strength": 90.88956867816871
+        },
+        {
+            "Latitude": 37.70008243519477,
+            "Longitude": -122.26798560804487,
+            "Signal_Strength": 87.25140352030513
+        },
+        {
+            "Latitude": 37.58446171934835,
+            "Longitude": -122.4500163129316,
+            "Signal_Strength": 17.15496528512216
+        },
+        {
+            "Latitude": 37.60465576226089,
+            "Longitude": -122.44692375866859,
+            "Signal_Strength": 88.61026764847192
+        },
+        {
+            "Latitude": 37.56637541872974,
+            "Longitude": -122.45243627645479,
+            "Signal_Strength": 2.64447261570967
+        },
+        {
+            "Latitude": 37.78575664398927,
+            "Longitude": -122.3372150876283,
+            "Signal_Strength": 59.81224148491516
+        },
+        {
+            "Latitude": 37.725146404781235,
+            "Longitude": -122.42661587916528,
+            "Signal_Strength": 81.02303167180543
+        },
+        {
+            "Latitude": 37.79111114208064,
+            "Longitude": -122.29172673764614,
+            "Signal_Strength": 40.67114847902549
+        },
+        {
+            "Latitude": 37.613866531578694,
+            "Longitude": -122.28341231931155,
+            "Signal_Strength": 48.09752930114435
+        },
+        {
+            "Latitude": 37.76069699927141,
+            "Longitude": -122.26694663356433,
+            "Signal_Strength": 91.02090333826604
+        },
+        {
+            "Latitude": 37.67951890187044,
+            "Longitude": -122.32901745907724,
+            "Signal_Strength": 36.64928571594537
+        },
+        {
+            "Latitude": 37.52852616507538,
+            "Longitude": -122.29687659205665,
+            "Signal_Strength": 28.25387037085957
+        },
+        {
+            "Latitude": 37.71581078511892,
+            "Longitude": -122.35302069591157,
+            "Signal_Strength": 43.20394567977398
+        },
+        {
+            "Latitude": 37.60998435616568,
+            "Longitude": -122.41372652524726,
+            "Signal_Strength": 41.31298027178423
+        },
+        {
+            "Latitude": 37.71952603591238,
+            "Longitude": -122.33881823348815,
+            "Signal_Strength": 28.015174028236267
+        },
+        {
+            "Latitude": 37.53956748535129,
+            "Longitude": -122.22857385396775,
+            "Signal_Strength": 49.55011485850481
+        },
+        {
+            "Latitude": 37.57963709257983,
+            "Longitude": -122.263852214056,
+            "Signal_Strength": 47.252283170111696
+        },
+        {
+            "Latitude": 37.57991344580249,
+            "Longitude": -122.28129326579946,
+            "Signal_Strength": 97.63939544079359
+        },
+        {
+            "Latitude": 37.72504777893875,
+            "Longitude": -122.38289663914625,
+            "Signal_Strength": 98.02447535493722
+        },
+        {
+            "Latitude": 37.597238779119536,
+            "Longitude": -122.32182429422313,
+            "Signal_Strength": 49.83060871539826
+        },
+        {
+            "Latitude": 37.71758258786774,
+            "Longitude": -122.33764421678764,
+            "Signal_Strength": 97.59630434673579
+        },
+        {
+            "Latitude": 37.639320772862845,
+            "Longitude": -122.20236196940598,
+            "Signal_Strength": 5.6785452485251575
+        },
+        {
+            "Latitude": 37.55851712450101,
+            "Longitude": -122.4844224864162,
+            "Signal_Strength": 53.40342552506348
+        },
+        {
+            "Latitude": 37.60505980306477,
+            "Longitude": -122.24312661332563,
+            "Signal_Strength": 87.110142679114
+        },
+        {
+            "Latitude": 37.76463535415178,
+            "Longitude": -122.47110751829928,
+            "Signal_Strength": 17.12001722325106
+        },
+        {
+            "Latitude": 37.53433922376955,
+            "Longitude": -122.30077483016663,
+            "Signal_Strength": 20.410822979865273
+        },
+        {
+            "Latitude": 37.61434981246957,
+            "Longitude": -122.3031712616395,
+            "Signal_Strength": 52.54308539115827
+        },
+        {
+            "Latitude": 37.53359460330306,
+            "Longitude": -122.27513150037572,
+            "Signal_Strength": 91.87481398022274
+        },
+        {
+            "Latitude": 37.56231235070997,
+            "Longitude": -122.49880776942311,
+            "Signal_Strength": 99.7308189446795
+        },
+        {
+            "Latitude": 37.510325510230096,
+            "Longitude": -122.47630221759825,
+            "Signal_Strength": 47.45384395638873
+        },
+        {
+            "Latitude": 37.62504476838077,
+            "Longitude": -122.20799792408566,
+            "Signal_Strength": 80.53387309431763
+        },
+        {
+            "Latitude": 37.67676535757261,
+            "Longitude": -122.24476795435298,
+            "Signal_Strength": 49.56910344685896
+        },
+        {
+            "Latitude": 37.599922135540005,
+            "Longitude": -122.28829366586099,
+            "Signal_Strength": 38.56566599446356
+        },
+        {
+            "Latitude": 37.551926074691536,
+            "Longitude": -122.32181456465725,
+            "Signal_Strength": 42.61530873126177
+        },
+        {
+            "Latitude": 37.59233258033359,
+            "Longitude": -122.23085977181746,
+            "Signal_Strength": 3.77103194619568
+        },
+        {
+            "Latitude": 37.68954582492274,
+            "Longitude": -122.25089178398306,
+            "Signal_Strength": 86.10929053093714
+        },
+        {
+            "Latitude": 37.61821374754933,
+            "Longitude": -122.42658920089126,
+            "Signal_Strength": 52.969200821924126
+        },
+        {
+            "Latitude": 37.74476392969547,
+            "Longitude": -122.3587344798816,
+            "Signal_Strength": 70.69293496608765
+        },
+        {
+            "Latitude": 37.68929581142474,
+            "Longitude": -122.34998506791395,
+            "Signal_Strength": 72.01763199225644
+        }
+    ],
+    "Bar_Chart_Data": [
+        {
+            "Type": "Type A",
+            "Count": 45
+        },
+        {
+            "Type": "Type B",
+            "Count": 30
+        },
+        {
+            "Type": "Type C",
+            "Count": 15
+        },
+        {
+            "Type": "Type D",
+            "Count": 10
+        }
+    ],
+    "Line_Graph_Data": [
+        {
+            "Time": "2024-11-01 00:00:00",
+            "Signal_Strength": 60.62182222442073
+        },
+        {
+            "Time": "2024-11-01 01:00:00",
+            "Signal_Strength": 36.714038165748974
+        },
+        {
+            "Time": "2024-11-01 02:00:00",
+            "Signal_Strength": 69.85748233081675
+        },
+        {
+            "Time": "2024-11-01 03:00:00",
+            "Signal_Strength": 83.46793954936501
+        },
+        {
+            "Time": "2024-11-01 04:00:00",
+            "Signal_Strength": 81.3725871911986
+        },
+        {
+            "Time": "2024-11-01 05:00:00",
+            "Signal_Strength": 25.0151191281056
+        },
+        {
+            "Time": "2024-11-01 06:00:00",
+            "Signal_Strength": 63.16482883159756
+        },
+        {
+            "Time": "2024-11-01 07:00:00",
+            "Signal_Strength": 58.12716388420588
+        },
+        {
+            "Time": "2024-11-01 08:00:00",
+            "Signal_Strength": 85.37582693225087
+        },
+        {
+            "Time": "2024-11-01 09:00:00",
+            "Signal_Strength": 84.31310299599724
+        },
+        {
+            "Time": "2024-11-01 10:00:00",
+            "Signal_Strength": 55.636407754620734
+        },
+        {
+            "Time": "2024-11-01 11:00:00",
+            "Signal_Strength": 11.514269578169678
+        },
+        {
+            "Time": "2024-11-01 12:00:00",
+            "Signal_Strength": 49.21746710479139
+        },
+        {
+            "Time": "2024-11-01 13:00:00",
+            "Signal_Strength": 62.16299969296062
+        },
+        {
+            "Time": "2024-11-01 14:00:00",
+            "Signal_Strength": 46.85794319328369
+        },
+        {
+            "Time": "2024-11-01 15:00:00",
+            "Signal_Strength": 36.22498120573854
+        },
+        {
+            "Time": "2024-11-01 16:00:00",
+            "Signal_Strength": 90.19090811695972
+        },
+        {
+            "Time": "2024-11-01 17:00:00",
+            "Signal_Strength": 51.74191216209635
+        },
+        {
+            "Time": "2024-11-01 18:00:00",
+            "Signal_Strength": 63.13648551073116
+        },
+        {
+            "Time": "2024-11-01 19:00:00",
+            "Signal_Strength": 71.890576330201
+        },
+        {
+            "Time": "2024-11-01 20:00:00",
+            "Signal_Strength": 13.53013817164177
+        },
+        {
+            "Time": "2024-11-01 21:00:00",
+            "Signal_Strength": 21.531552249951858
+        },
+        {
+            "Time": "2024-11-01 22:00:00",
+            "Signal_Strength": 35.51173357629557
+        },
+        {
+            "Time": "2024-11-01 23:00:00",
+            "Signal_Strength": 16.07147002456717
+        },
+        {
+            "Time": "2024-11-02 00:00:00",
+            "Signal_Strength": 18.97931091454108
+        },
+        {
+            "Time": "2024-11-02 01:00:00",
+            "Signal_Strength": 41.67439561875389
+        },
+        {
+            "Time": "2024-11-02 02:00:00",
+            "Signal_Strength": 70.01530793796911
+        },
+        {
+            "Time": "2024-11-02 03:00:00",
+            "Signal_Strength": 55.769828796617006
+        },
+        {
+            "Time": "2024-11-02 04:00:00",
+            "Signal_Strength": 66.10812838431855
+        },
+        {
+            "Time": "2024-11-02 05:00:00",
+            "Signal_Strength": 17.411290101543596
+        },
+        {
+            "Time": "2024-11-02 06:00:00",
+            "Signal_Strength": 40.8924599958066
+        },
+        {
+            "Time": "2024-11-02 07:00:00",
+            "Signal_Strength": 68.23804827327649
+        },
+        {
+            "Time": "2024-11-02 08:00:00",
+            "Signal_Strength": 18.92884185943955
+        },
+        {
+            "Time": "2024-11-02 09:00:00",
+            "Signal_Strength": 93.09863824917369
+        },
+        {
+            "Time": "2024-11-02 10:00:00",
+            "Signal_Strength": 63.58521165303457
+        },
+        {
+            "Time": "2024-11-02 11:00:00",
+            "Signal_Strength": 63.49328883493385
+        },
+        {
+            "Time": "2024-11-02 12:00:00",
+            "Signal_Strength": 14.597302321138683
+        },
+        {
+            "Time": "2024-11-02 13:00:00",
+            "Signal_Strength": 36.679953515539054
+        },
+        {
+            "Time": "2024-11-02 14:00:00",
+            "Signal_Strength": 87.6306886040167
+        },
+        {
+            "Time": "2024-11-02 15:00:00",
+            "Signal_Strength": 32.80782254510826
+        },
+        {
+            "Time": "2024-11-02 16:00:00",
+            "Signal_Strength": 19.24101473806018
+        },
+        {
+            "Time": "2024-11-02 17:00:00",
+            "Signal_Strength": 5.356556262679235
+        },
+        {
+            "Time": "2024-11-02 18:00:00",
+            "Signal_Strength": 58.35737361101538
+        },
+        {
+            "Time": "2024-11-02 19:00:00",
+            "Signal_Strength": 76.0837317862118
+        },
+        {
+            "Time": "2024-11-02 20:00:00",
+            "Signal_Strength": 53.104817841122866
+        },
+        {
+            "Time": "2024-11-02 21:00:00",
+            "Signal_Strength": 62.87667298308352
+        },
+        {
+            "Time": "2024-11-02 22:00:00",
+            "Signal_Strength": 93.62648584874859
+        },
+        {
+            "Time": "2024-11-02 23:00:00",
+            "Signal_Strength": 15.010090691204248
+        },
+        {
+            "Time": "2024-11-03 00:00:00",
+            "Signal_Strength": 34.73979745387524
+        },
+        {
+            "Time": "2024-11-03 01:00:00",
+            "Signal_Strength": 94.13894205343436
+        }
+    ],
+    "Data_Table": [
+        {
+            "Entry_ID": 1,
+            "Latitude": 37.521171757504234,
+            "Longitude": -122.27872161121387,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 83.10507309044097
+        },
+        {
+            "Entry_ID": 2,
+            "Latitude": 37.661575564226716,
+            "Longitude": -122.43786820610251,
+            "Signal_Type": "GPS",
+            "Signal_Strength": 46.42015157389678
+        },
+        {
+            "Entry_ID": 3,
+            "Latitude": 37.562689611267125,
+            "Longitude": -122.49393725414735,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 72.15589118765755
+        },
+        {
+            "Entry_ID": 4,
+            "Latitude": 37.70597813479392,
+            "Longitude": -122.22285274997276,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 13.388613471903232
+        },
+        {
+            "Entry_ID": 5,
+            "Latitude": 37.50941558729664,
+            "Longitude": -122.25598534832719,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 66.81346341950405
+        },
+        {
+            "Entry_ID": 6,
+            "Latitude": 37.79089559615377,
+            "Longitude": -122.26021594781636,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 56.48869760054649
+        },
+        {
+            "Entry_ID": 7,
+            "Latitude": 37.64972439549253,
+            "Longitude": -122.30041383453052,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 51.108369021343826
+        },
+        {
+            "Entry_ID": 8,
+            "Latitude": 37.56192217817986,
+            "Longitude": -122.21957651714402,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 35.17455181986684
+        },
+        {
+            "Entry_ID": 9,
+            "Latitude": 37.53096272908181,
+            "Longitude": -122.42610192470404,
+            "Signal_Type": "GPS",
+            "Signal_Strength": 12.906170765609914
+        },
+        {
+            "Entry_ID": 10,
+            "Latitude": 37.69211905115988,
+            "Longitude": -122.34300091100292,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 66.89005639445756
+        },
+        {
+            "Entry_ID": 11,
+            "Latitude": 37.781059327306544,
+            "Longitude": -122.30805578598243,
+            "Signal_Type": "GPS",
+            "Signal_Strength": 54.38151566893759
+        },
+        {
+            "Entry_ID": 12,
+            "Latitude": 37.61180487557317,
+            "Longitude": -122.27912844154169,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 77.43894718983269
+        },
+        {
+            "Entry_ID": 13,
+            "Latitude": 37.693136698685656,
+            "Longitude": -122.43827529198252,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 82.70972455063223
+        },
+        {
+            "Entry_ID": 14,
+            "Latitude": 37.741199235004785,
+            "Longitude": -122.21640145135196,
+            "Signal_Type": "GPS",
+            "Signal_Strength": 86.21769370167458
+        },
+        {
+            "Entry_ID": 15,
+            "Latitude": 37.6325995923007,
+            "Longitude": -122.44603385025157,
+            "Signal_Type": "GPS",
+            "Signal_Strength": 85.79760697650131
+        },
+        {
+            "Entry_ID": 16,
+            "Latitude": 37.58607591210662,
+            "Longitude": -122.46846971906879,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 88.95370462841655
+        },
+        {
+            "Entry_ID": 17,
+            "Latitude": 37.74755363387337,
+            "Longitude": -122.26061123281278,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 48.99036303205473
+        },
+        {
+            "Entry_ID": 18,
+            "Latitude": 37.697013087339435,
+            "Longitude": -122.31169463027969,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 90.96864948209222
+        },
+        {
+            "Entry_ID": 19,
+            "Latitude": 37.69792505456737,
+            "Longitude": -122.3666703980225,
+            "Signal_Type": "Wi-Fi",
+            "Signal_Strength": 10.726350841321963
+        },
+        {
+            "Entry_ID": 20,
+            "Latitude": 37.79090109703126,
+            "Longitude": -122.28110614174662,
+            "Signal_Type": "LoRa",
+            "Signal_Strength": 67.91453782953015
+        }
+    ]
+}

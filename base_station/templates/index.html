@@ -117,6 +117,32 @@
         <div id="map-3d"></div>
     </div>
 
+    <div class="max-w-full mx-auto bg-white shadow-lg rounded-lg p-4">
+        <h2 class="text-xl font-semibold text-center mb-4">Detected targets</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Power</th>
+                <th>Frequency</th>
+                <th>Timestamp</th>
+            </tr>
+            {% for marker in markers %}
+                <tr>
+                    <td>{{ marker.name }}</td>
+                    <td>{{ marker.lat }}</td>
+                    <td>{{ marker.lon }}</td>
+                    <td>{{ marker.power }}</td>
+                    <td>{{ marker.frequency }}</td>
+                    <td>{{ marker.timestamp }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    
+
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
