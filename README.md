@@ -7,6 +7,15 @@ Based on [PainlessMesh](https://gitlab.com/painlessMesh/painlessMesh)
 Simplest way to deploy a mesh of sensors for resilient communication defense / offense 
 with packaged goodies. You can think of it as a mesh station.
 
+## Base station
+
+- cd frontend/
+- pip install -r requirements.txt
+- flask --debug run
+
+This will start a server with maps reading from a json file being written by 
+an ESP-32 connected to the PC
+
 ## Intro to painlessMesh
 
 painlessMesh is a library that takes care of the particulars of creating a simple mesh network using esp8266 and esp32 hardware.  The goal is to allow the programmer to work with a mesh network without having to worry about how the network is structured or managed.
