@@ -9,7 +9,7 @@ with packaged goodies. You can think of it as a mesh station.
 
 ## Base station
 
-- cd frontend/
+- cd base_station/
 - pip install -r requirements.txt
 - flask --debug run
 
