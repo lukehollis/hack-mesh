@@ -1,0 +1,57 @@
+{% load static tailwind_tags i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#000000">
+
+
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36250260-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-36250260-17');
+    </script>
+
+		{% tailwind_css %}
+
+    {% block head_res %}{% endblock %}
+  </head>
+
+  <body class="{{body_classes}} bg-theme-900 antialiased w-screen overflow-x-hidden">
+    {% block header %}
+      {% include "partials/header.twig" %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+      {% include "partials/footer.twig" %}
+    {% endblock %}
+
+    {% if not request.user.is_authenticated and not request.COOKIES.app_cookies_accepted %}
+      {# {% include 'partials/cookie-notification.twig' %} #}
+    {% endif %}
+
+    <script async defer="defer" src="{% static 'js/site.js' %}" type="text/javascript"></script>
+  </body>
+</html>

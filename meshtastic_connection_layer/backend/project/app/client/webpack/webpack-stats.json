@@ -1,0 +1,819 @@
+{
+  "status": "done",
+  "assets": {
+    ".DS_Store": {
+      "name": ".DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/.DS_Store"
+    },
+    ".gitkeep": {
+      "name": ".gitkeep",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/.gitkeep"
+    },
+    "android-chrome-192x192.png": {
+      "name": "android-chrome-192x192.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/android-chrome-192x192.png"
+    },
+    "android-chrome-512x512.png": {
+      "name": "android-chrome-512x512.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/android-chrome-512x512.png"
+    },
+    "apple-touch-icon.png": {
+      "name": "apple-touch-icon.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/apple-touch-icon.png"
+    },
+    "bundle.1845e962c6997ed947cb.js": {
+      "name": "bundle.1845e962c6997ed947cb.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/bundle.1845e962c6997ed947cb.js"
+    },
+    "bundle.1845e962c6997ed947cb.js.LICENSE.txt": {
+      "name": "bundle.1845e962c6997ed947cb.js.LICENSE.txt",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/bundle.1845e962c6997ed947cb.js.LICENSE.txt"
+    },
+    "bundle.1845e962c6997ed947cb.js.map": {
+      "name": "bundle.1845e962c6997ed947cb.js.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/bundle.1845e962c6997ed947cb.js.map"
+    },
+    "copy_locale_data.sh": {
+      "name": "copy_locale_data.sh",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/copy_locale_data.sh"
+    },
+    "favicon-16x16.png": {
+      "name": "favicon-16x16.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/favicon-16x16.png"
+    },
+    "favicon-32x32.png": {
+      "name": "favicon-32x32.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/favicon-32x32.png"
+    },
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/favicon.ico"
+    },
+    "locales/.DS_Store": {
+      "name": "locales/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/.DS_Store"
+    },
+    "locales/ar/index.js": {
+      "name": "locales/ar/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ar/index.js"
+    },
+    "locales/ar/ui.json": {
+      "name": "locales/ar/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ar/ui.json"
+    },
+    "locales/bn/index.js": {
+      "name": "locales/bn/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/bn/index.js"
+    },
+    "locales/bn/ui.json": {
+      "name": "locales/bn/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/bn/ui.json"
+    },
+    "locales/de/index.js": {
+      "name": "locales/de/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/de/index.js"
+    },
+    "locales/de/ui.json": {
+      "name": "locales/de/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/de/ui.json"
+    },
+    "locales/el/index.js": {
+      "name": "locales/el/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/el/index.js"
+    },
+    "locales/el/ui.json": {
+      "name": "locales/el/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/el/ui.json"
+    },
+    "locales/en/.DS_Store": {
+      "name": "locales/en/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/en/.DS_Store"
+    },
+    "locales/en/index.js": {
+      "name": "locales/en/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/en/index.js"
+    },
+    "locales/en/ui.json": {
+      "name": "locales/en/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/en/ui.json"
+    },
+    "locales/es/index.js": {
+      "name": "locales/es/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/es/index.js"
+    },
+    "locales/es/ui.json": {
+      "name": "locales/es/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/es/ui.json"
+    },
+    "locales/fr/index.js": {
+      "name": "locales/fr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/fr/index.js"
+    },
+    "locales/fr/ui.json": {
+      "name": "locales/fr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/fr/ui.json"
+    },
+    "locales/hi/index.js": {
+      "name": "locales/hi/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/hi/index.js"
+    },
+    "locales/hi/ui.json": {
+      "name": "locales/hi/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/hi/ui.json"
+    },
+    "locales/id/index.js": {
+      "name": "locales/id/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/id/index.js"
+    },
+    "locales/id/ui.json": {
+      "name": "locales/id/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/id/ui.json"
+    },
+    "locales/index.js": {
+      "name": "locales/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/index.js"
+    },
+    "locales/it/index.js": {
+      "name": "locales/it/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/it/index.js"
+    },
+    "locales/it/ui.json": {
+      "name": "locales/it/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/it/ui.json"
+    },
+    "locales/ja/index.js": {
+      "name": "locales/ja/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ja/index.js"
+    },
+    "locales/ja/ui.json": {
+      "name": "locales/ja/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ja/ui.json"
+    },
+    "locales/ko/index.js": {
+      "name": "locales/ko/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ko/index.js"
+    },
+    "locales/ko/ui.json": {
+      "name": "locales/ko/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ko/ui.json"
+    },
+    "locales/pt/index.js": {
+      "name": "locales/pt/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/pt/index.js"
+    },
+    "locales/pt/ui.json": {
+      "name": "locales/pt/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/pt/ui.json"
+    },
+    "locales/ru/index.js": {
+      "name": "locales/ru/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ru/index.js"
+    },
+    "locales/ru/ui.json": {
+      "name": "locales/ru/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/ru/ui.json"
+    },
+    "locales/tr/index.js": {
+      "name": "locales/tr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/tr/index.js"
+    },
+    "locales/tr/ui.json": {
+      "name": "locales/tr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/tr/ui.json"
+    },
+    "locales/zh-hans/index.js": {
+      "name": "locales/zh-hans/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/zh-hans/index.js"
+    },
+    "locales/zh-hans/ui.json": {
+      "name": "locales/zh-hans/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/locales/zh-hans/ui.json"
+    },
+    "main.css": {
+      "name": "main.css",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/main.css"
+    },
+    "main.css.map": {
+      "name": "main.css.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/main.css.map"
+    },
+    "site.webmanifest": {
+      "name": "site.webmanifest",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/site.webmanifest"
+    },
+    "webpack_bundles/.DS_Store": {
+      "name": "webpack_bundles/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/.DS_Store"
+    },
+    "webpack_bundles/.gitkeep": {
+      "name": "webpack_bundles/.gitkeep",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/.gitkeep"
+    },
+    "webpack_bundles/android-chrome-192x192.png": {
+      "name": "webpack_bundles/android-chrome-192x192.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/android-chrome-192x192.png"
+    },
+    "webpack_bundles/android-chrome-512x512.png": {
+      "name": "webpack_bundles/android-chrome-512x512.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/android-chrome-512x512.png"
+    },
+    "webpack_bundles/apple-touch-icon.png": {
+      "name": "webpack_bundles/apple-touch-icon.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/apple-touch-icon.png"
+    },
+    "webpack_bundles/bundle.aed5d15764eeb12c4e0e.js": {
+      "name": "webpack_bundles/bundle.aed5d15764eeb12c4e0e.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/bundle.aed5d15764eeb12c4e0e.js"
+    },
+    "webpack_bundles/bundle.aed5d15764eeb12c4e0e.js.LICENSE.txt": {
+      "name": "webpack_bundles/bundle.aed5d15764eeb12c4e0e.js.LICENSE.txt",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/bundle.aed5d15764eeb12c4e0e.js.LICENSE.txt"
+    },
+    "webpack_bundles/bundle.aed5d15764eeb12c4e0e.js.map": {
+      "name": "webpack_bundles/bundle.aed5d15764eeb12c4e0e.js.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/bundle.aed5d15764eeb12c4e0e.js.map"
+    },
+    "webpack_bundles/copy_locale_data.sh": {
+      "name": "webpack_bundles/copy_locale_data.sh",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/copy_locale_data.sh"
+    },
+    "webpack_bundles/favicon-16x16.png": {
+      "name": "webpack_bundles/favicon-16x16.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/favicon-16x16.png"
+    },
+    "webpack_bundles/favicon-32x32.png": {
+      "name": "webpack_bundles/favicon-32x32.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/favicon-32x32.png"
+    },
+    "webpack_bundles/favicon.ico": {
+      "name": "webpack_bundles/favicon.ico",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/favicon.ico"
+    },
+    "webpack_bundles/locales/.DS_Store": {
+      "name": "webpack_bundles/locales/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/.DS_Store"
+    },
+    "webpack_bundles/locales/ar/index.js": {
+      "name": "webpack_bundles/locales/ar/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ar/index.js"
+    },
+    "webpack_bundles/locales/ar/ui.json": {
+      "name": "webpack_bundles/locales/ar/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ar/ui.json"
+    },
+    "webpack_bundles/locales/bn/index.js": {
+      "name": "webpack_bundles/locales/bn/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/bn/index.js"
+    },
+    "webpack_bundles/locales/bn/ui.json": {
+      "name": "webpack_bundles/locales/bn/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/bn/ui.json"
+    },
+    "webpack_bundles/locales/de/index.js": {
+      "name": "webpack_bundles/locales/de/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/de/index.js"
+    },
+    "webpack_bundles/locales/de/ui.json": {
+      "name": "webpack_bundles/locales/de/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/de/ui.json"
+    },
+    "webpack_bundles/locales/el/index.js": {
+      "name": "webpack_bundles/locales/el/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/el/index.js"
+    },
+    "webpack_bundles/locales/el/ui.json": {
+      "name": "webpack_bundles/locales/el/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/el/ui.json"
+    },
+    "webpack_bundles/locales/en/.DS_Store": {
+      "name": "webpack_bundles/locales/en/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/en/.DS_Store"
+    },
+    "webpack_bundles/locales/en/index.js": {
+      "name": "webpack_bundles/locales/en/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/en/index.js"
+    },
+    "webpack_bundles/locales/en/ui.json": {
+      "name": "webpack_bundles/locales/en/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/en/ui.json"
+    },
+    "webpack_bundles/locales/es/index.js": {
+      "name": "webpack_bundles/locales/es/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/es/index.js"
+    },
+    "webpack_bundles/locales/es/ui.json": {
+      "name": "webpack_bundles/locales/es/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/es/ui.json"
+    },
+    "webpack_bundles/locales/fr/index.js": {
+      "name": "webpack_bundles/locales/fr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/fr/index.js"
+    },
+    "webpack_bundles/locales/fr/ui.json": {
+      "name": "webpack_bundles/locales/fr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/fr/ui.json"
+    },
+    "webpack_bundles/locales/hi/index.js": {
+      "name": "webpack_bundles/locales/hi/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/hi/index.js"
+    },
+    "webpack_bundles/locales/hi/ui.json": {
+      "name": "webpack_bundles/locales/hi/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/hi/ui.json"
+    },
+    "webpack_bundles/locales/id/index.js": {
+      "name": "webpack_bundles/locales/id/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/id/index.js"
+    },
+    "webpack_bundles/locales/id/ui.json": {
+      "name": "webpack_bundles/locales/id/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/id/ui.json"
+    },
+    "webpack_bundles/locales/index.js": {
+      "name": "webpack_bundles/locales/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/index.js"
+    },
+    "webpack_bundles/locales/it/index.js": {
+      "name": "webpack_bundles/locales/it/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/it/index.js"
+    },
+    "webpack_bundles/locales/it/ui.json": {
+      "name": "webpack_bundles/locales/it/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/it/ui.json"
+    },
+    "webpack_bundles/locales/ja/index.js": {
+      "name": "webpack_bundles/locales/ja/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ja/index.js"
+    },
+    "webpack_bundles/locales/ja/ui.json": {
+      "name": "webpack_bundles/locales/ja/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ja/ui.json"
+    },
+    "webpack_bundles/locales/ko/index.js": {
+      "name": "webpack_bundles/locales/ko/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ko/index.js"
+    },
+    "webpack_bundles/locales/ko/ui.json": {
+      "name": "webpack_bundles/locales/ko/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ko/ui.json"
+    },
+    "webpack_bundles/locales/pt/index.js": {
+      "name": "webpack_bundles/locales/pt/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/pt/index.js"
+    },
+    "webpack_bundles/locales/pt/ui.json": {
+      "name": "webpack_bundles/locales/pt/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/pt/ui.json"
+    },
+    "webpack_bundles/locales/ru/index.js": {
+      "name": "webpack_bundles/locales/ru/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ru/index.js"
+    },
+    "webpack_bundles/locales/ru/ui.json": {
+      "name": "webpack_bundles/locales/ru/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/ru/ui.json"
+    },
+    "webpack_bundles/locales/tr/index.js": {
+      "name": "webpack_bundles/locales/tr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/tr/index.js"
+    },
+    "webpack_bundles/locales/tr/ui.json": {
+      "name": "webpack_bundles/locales/tr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/tr/ui.json"
+    },
+    "webpack_bundles/locales/zh-hans/index.js": {
+      "name": "webpack_bundles/locales/zh-hans/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/zh-hans/index.js"
+    },
+    "webpack_bundles/locales/zh-hans/ui.json": {
+      "name": "webpack_bundles/locales/zh-hans/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/locales/zh-hans/ui.json"
+    },
+    "webpack_bundles/main.css": {
+      "name": "webpack_bundles/main.css",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/main.css"
+    },
+    "webpack_bundles/main.css.map": {
+      "name": "webpack_bundles/main.css.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/main.css.map"
+    },
+    "webpack_bundles/site.webmanifest": {
+      "name": "webpack_bundles/site.webmanifest",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/site.webmanifest"
+    },
+    "webpack_bundles/webpack_bundles/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/.gitkeep": {
+      "name": "webpack_bundles/webpack_bundles/.gitkeep",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep"
+    },
+    "webpack_bundles/webpack_bundles/android-chrome-192x192.png": {
+      "name": "webpack_bundles/webpack_bundles/android-chrome-192x192.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-192x192.png"
+    },
+    "webpack_bundles/webpack_bundles/android-chrome-512x512.png": {
+      "name": "webpack_bundles/webpack_bundles/android-chrome-512x512.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-512x512.png"
+    },
+    "webpack_bundles/webpack_bundles/apple-touch-icon.png": {
+      "name": "webpack_bundles/webpack_bundles/apple-touch-icon.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/apple-touch-icon.png"
+    },
+    "webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js": {
+      "name": "webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js"
+    },
+    "webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.LICENSE.txt": {
+      "name": "webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.LICENSE.txt",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.LICENSE.txt"
+    },
+    "webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.map": {
+      "name": "webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.map"
+    },
+    "webpack_bundles/webpack_bundles/copy_locale_data.sh": {
+      "name": "webpack_bundles/webpack_bundles/copy_locale_data.sh",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/copy_locale_data.sh"
+    },
+    "webpack_bundles/webpack_bundles/favicon-16x16.png": {
+      "name": "webpack_bundles/webpack_bundles/favicon-16x16.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/favicon-16x16.png"
+    },
+    "webpack_bundles/webpack_bundles/favicon-32x32.png": {
+      "name": "webpack_bundles/webpack_bundles/favicon-32x32.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/favicon-32x32.png"
+    },
+    "webpack_bundles/webpack_bundles/favicon.ico": {
+      "name": "webpack_bundles/webpack_bundles/favicon.ico",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/favicon.ico"
+    },
+    "webpack_bundles/webpack_bundles/locales/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/locales/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/locales/ar/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/ar/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/ar/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/ar/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/bn/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/bn/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/bn/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/bn/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/de/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/de/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/de/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/de/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/de/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/de/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/el/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/el/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/el/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/el/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/el/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/el/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/en/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/locales/en/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/en/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/locales/en/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/en/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/en/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/en/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/en/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/en/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/es/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/es/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/es/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/es/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/es/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/es/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/fr/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/fr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/fr/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/fr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/hi/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/hi/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/hi/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/hi/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/id/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/id/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/id/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/id/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/id/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/id/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/it/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/it/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/it/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/it/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/it/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/it/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/ja/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/ja/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/ja/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/ja/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/ko/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/ko/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/ko/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/ko/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/pt/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/pt/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/pt/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/pt/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/ru/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/ru/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/ru/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/ru/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/tr/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/tr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/tr/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/tr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/locales/zh-hans/index.js": {
+      "name": "webpack_bundles/webpack_bundles/locales/zh-hans/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/index.js"
+    },
+    "webpack_bundles/webpack_bundles/locales/zh-hans/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/locales/zh-hans/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/main.css": {
+      "name": "webpack_bundles/webpack_bundles/main.css",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/main.css"
+    },
+    "webpack_bundles/webpack_bundles/main.css.map": {
+      "name": "webpack_bundles/webpack_bundles/main.css.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/main.css.map"
+    },
+    "webpack_bundles/webpack_bundles/site.webmanifest": {
+      "name": "webpack_bundles/webpack_bundles/site.webmanifest",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/site.webmanifest"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-192x192.png": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-192x192.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-192x192.png"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-512x512.png": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-512x512.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/android-chrome-512x512.png"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/apple-touch-icon.png": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/apple-touch-icon.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/apple-touch-icon.png"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.LICENSE.txt": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.LICENSE.txt",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.LICENSE.txt"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.map": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/bundle.0b69dd357e860459204e.js.map"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/copy_locale_data.sh": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/copy_locale_data.sh",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/copy_locale_data.sh"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/favicon-16x16.png": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/favicon-16x16.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/favicon-16x16.png"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/favicon-32x32.png": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/favicon-32x32.png",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/favicon-32x32.png"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/favicon.ico": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/favicon.ico",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/favicon.ico"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ar/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/bn/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/de/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/de/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/de/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/de/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/de/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/de/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/el/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/el/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/el/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/el/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/el/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/el/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/en/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/en/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/en/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/en/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/en/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/en/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/en/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/en/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/en/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/es/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/es/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/es/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/es/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/es/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/es/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/fr/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/hi/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/id/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/id/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/id/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/id/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/id/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/id/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/it/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/it/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/it/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/it/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/it/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/it/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ja/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ko/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/pt/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/ru/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/tr/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/index.js": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/index.js",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/index.js"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/ui.json": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/ui.json",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/locales/zh-hans/ui.json"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/main.css": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/main.css",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/main.css"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/main.css.map": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/main.css.map",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/main.css.map"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/site.webmanifest": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/site.webmanifest",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/site.webmanifest"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.DS_Store"
+    },
+    "webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep": {
+      "name": "webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep",
+      "path": "/Users/lrh/Projects/spaceshare/spaceshare_django/spaceshare/app/static/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/webpack_bundles/.gitkeep"
+    }
+  },
+  "chunks": {
+    "main": [
+      "main.css",
+      "bundle.1845e962c6997ed947cb.js"
+    ]
+  }
+}

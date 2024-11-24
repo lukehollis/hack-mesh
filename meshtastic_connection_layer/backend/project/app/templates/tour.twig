@@ -1,0 +1,415 @@
+{% extends "base.twig" %}
+{% load render_bundle from webpack_loader %}
+{% load i18n %}
+
+{% block title %}
+  {{tour.title}}
+{% endblock %}
+
+{% block head_res %}
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  {% render_bundle 'main' 'css' %}
+{% endblock %}
+
+
+{% block body_classes %}overflow-hidden{% endblock %}
+
+{% block content %}
+
+  <canvas class="webgl fixed top-0 bottom-0 left-0 right-0 h-screen w-screen z-0 overflow-hidden"></canvas>
+
+  <div id="vignette-layer" class="fixed top-0 left-0 right-0 bottom-0 pointer-events-none "
+    style="box-shadow: inset 0px 0px 40px 0px rgba(10, 10, 10, 0.6); z-index: 10;"
+  >
+  </div>
+
+  <div 
+      id="node-loading-screen"
+      class="hidden fixed top-0 right-0 bottom-0 left-0 w-screen h-screen flex justify-center items-center bg-transparent bg-cover"
+      style="
+        backdrop-filter: blur(2px);
+      "
+    >
+    <div
+      class="inline-block h-16 w-16 animate-spin rounded-full border-4 border-solid border-white border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+      role="status">
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)] text-white text-shadow text-sm font-sans"
+        >{% trans "Loading" %}...</span
+      >
+    </div>
+  </div>
+
+  <div id="hud-container" class="fixed sm:flex bottom-6 left-6 z-10 items-start justify-center space-x-2 pointer-events-none" >
+    <button id="view-mode-button" class="text-white bg-black/20 hover:bg-black/40 rounded-lg p-2 pointer-events-auto">
+      <svg id="view-mode-fpv-icon" class="button-icon cube-outline h-6 w-6 fill-current drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cube-outline</title><path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z" /></svg> 
+      <svg id="view-mode-orbit-icon"  class="button-icon hidden walk h-6 w-6 fill-current drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>walk</title><path d="M14.12,10H19V8.2H15.38L13.38,4.87C13.08,4.37 12.54,4.03 11.92,4.03C11.74,4.03 11.58,4.06 11.42,4.11L6,5.8V11H7.8V7.33L9.91,6.67L6,22H7.8L10.67,13.89L13,17V22H14.8V15.59L12.31,11.05L13.04,8.18M14,3.8C15,3.8 15.8,3 15.8,2C15.8,1 15,0.2 14,0.2C13,0.2 12.2,1 12.2,2C12.2,3 13,3.8 14,3.8Z" /></svg>
+    </button>
+    <button id="full-screen-button" class="text-white fixed bottom-6 right-6 rounded-lg p-2 hover:bg-black/10  pointer-events-auto">
+      <svg id="full-screen-on" class="button-icon fullscreen h-6 w-6 fill-current drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>fullscreen</title><path d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z" /></svg> 
+      <svg id="full-screen-off" class="button-icon hidden fullscreen-exit h-6 w-6 fill-current drop-shadow-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><title>fullscreen-exit</title><path d="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z" /></svg>
+    </button>
+  </div>
+
+  <div id="maps-attribution" class="hidden fixed bottom-0 left-4 z-10 flex flex-nowrap justify-start items-end">
+    <img class="w-12" src="https://static.mused.org/google_on_non_white.png" />
+    <span class="block" style="
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 10px;
+      padding-left: 6px;
+      color: #ffffff;
+      max-width: 160px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
+      overflow: hidden;
+    ">
+     Data SIO, NOAA, U.S. Navy, NGA, GEBCO; Landsat / Copernicus
+    </span>
+  </div>
+
+  <div 
+    id="debug-container"
+    class="pointer-events-none"
+  >
+  </div>
+
+  <div 
+    id="tour-ui"
+    class="hidden pointer-events-none"
+  >
+
+    <!-- guided tour ui -->
+    <div 
+      id="tour-ui-navpoint"
+      class=""
+    >
+      <div class="relative text-white w-screen h-screen pointer-events-none" style="z-index: 2;">
+
+        <!-- tour point ui display -->
+        <div id="tour-ui-display" class="fixed top-0 left-0 right-auto bottom-0 w-full sm:w-1/2 bg-gradient-to-t sm:bg-gradient-to-r from-theme-900-opacity-80 to-transparent pointer-events-none" >
+
+          <div
+            id="tour-ui-content"
+            class="flex absolute w-full h-full lg:w-128 text-white z-40 pointer-events-none right-0 sm:right-auto left-0" 
+            style="max-width: 30rem;"
+          >
+
+            <div 
+              id="tour-ui-content-inner"
+              class="w-full h-auto max-w-3xl mx-auto flex flex-col items-start sm:items-end sm:self-center justify-end pb-28 "
+            >
+
+              <!-- tour point media -->
+              <div 
+                class=""
+              >
+              </div>
+
+              <div 
+                id="tour-point-text"
+                class="tour-point-text flex flex-col px-4 sm:px-8 py-0 sm:pt-6 sm:pb-6 font-sans text-md md:text-2xl max-w-3xl mx-auto items-end transition-all"
+                style="
+                  text-shadow: 0px 0px 5px #000;
+                "
+              >
+                <div id="tour-point-text-main" class="w-full">
+                </div>
+
+                <span 
+                  id="tour-point-text-secondary"
+                  class="hidden sm:block font-serif italic mt-2 sm:mt-8 text-xs sm:text-sm md:text-lg opacity-70 w-full"
+                >
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div 
+      id="tour-ui-buttons"
+      class=""
+    >
+      <div 
+        id="tour-ui-buttons-inner"
+      class="fixed w-11/12 md:w-6/12 max-w-xl left-0 right-0 bottom-6 mx-auto z-40 flex flex-wrap sm:flex-nowrap overflow-hidden items-center justify-start sm:justify-center pointer-events-none">
+        <button 
+          id="prev-button"
+          class="flex items-center justify-center py-2 pl-0 sm:pl-3 pr-4 rounded-lg text-xs uppercase sm:tracking-widest font-sans text-white mr-4 pointer-events-auto opacity-10 transition-all" 
+          disabled="true"
+        >
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="mr-2">
+            <path fill="currentColor" d="M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z" />
+          </svg>
+          {% trans "Previous" %}
+        </button>
+
+        <button 
+          id="next-button"
+          class="cursor-pointer flex items-center justify-center border-2 border-theme-100 bg-transparent hover:bg-theme-800 hover:border-theme-800 py-4 px-24 w-full sm:w-auto sm:mr-16 max-w-2xl shadow-xl text-xs uppercase  sm:tracking-widest font-sans text-white pointer-events-auto whitespace-nowrap  transition-all" 
+        >
+        	{% trans "Next" %}
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div id="header-actions" class="header-actions pointer-events-none">
+      <div class="fixed top-4  right-0 //right-16//md:right-72// py-2 px-0 sm:py-4 sm:px-6 flex flex-nowrap justify-end items-center hidden">
+        <button 
+          id="audio-on-button"
+          class="cursor-pointer rounded-lg flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90  transition-all " 
+        >
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class=""><title>Mute Audio</title><path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>
+        </button>
+        <button 
+          id="audio-mute-button"
+          class="hidden cursor-pointer rounded-lg flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90 transition-all" 
+        >
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class=""><title>Unmute Audio</title><path fill="currentColor" d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z" /></svg>
+
+        </button>
+        <button 
+          id="guide-toggle-button"
+          class="cursor-pointer flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90 transition-all" 
+        >
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="">
+            <title>Turn off Guided Tour</title>
+            <path fill="currentColor" d="M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63Z" /></svg>
+        </button>
+        <button 
+          id="free-explore-toggle-button"
+          class="hidden cursor-pointer flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90 transition-all" 
+        >
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="">
+            <title>Turn on Guided Tour</title>
+            <path fill="currentColor" d="M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z" /></svg>
+        </button>
+      </div> 
+
+  </div>
+
+  <div 
+      id="tour-start-screen"
+      class="hidden fixed top-0 right-0 bottom-0 left-0 z-50 w-screen h-screen flex justify-center items-center "
+      style="
+      "
+    >
+      <div 
+        class="fixed top-0 right-0 bottom-0 left-0 w-screen h-screen bg-cover z-10"
+        style="
+          background-color: rgba(61, 59, 65, 0.8); 
+        "
+      >
+      </div>
+
+      <div 
+        class="fixed top-0 right-0 bottom-0 left-0 w-screen h-screen bg-cover z-10"
+        style="
+          box-shadow: inset 0 0 90px 50px rgba(0, 0, 0, 0.6);
+        "
+      >
+      </div>
+
+
+      <div class="relative z-30 max-w-3xl w-full h-full py-2 px-2 flex items-center justify-center flex-col">
+          <div 
+              id="title-outer"
+              class=" text-center "
+          >
+              <h1 
+                  class="inline-block  text-white text-center pt-6 pb-2 mt-1 transition-all"
+              >
+                  <span 
+                      id="loading-title" 
+                      class="block text-2xl sm:text-5xl tracking-widest"
+                      style="font-variant: small-caps;"
+                  >
+                      {{ tour.title }}
+                  </span>
+              </h1>
+          </div>
+          <div class=" my-6 sm:my-12 flex items-center justify-center flex-nowrap">
+              <p 
+                  id="loading-subtitle"
+                  class=" block w-full max-w-2xl text-center font-serif text-theme-200 text-gray-300 italic text-sm sm:text-xl transition-all"
+              >
+                {{ tour.description|truncatewords_html:20 }}
+              </p>
+          </div>
+          <div 
+              class="mt-2 flex items-center justify-center flex-wrap sm:flex-nowrap"
+          >
+            <div class="w-full mx-auto z-40 flex flex-wrap sm:flex-nowrap items-center justify-center ">
+              <button 
+                id="start-tour-button"
+                class="cursor-pointer flex items-center justify-center border-2 border-white bg-white hover:bg-theme-800 hover:border-theme-800 py-4 px-24 w-full sm:w-auto  max-w-2xl shadow-xl text-xs uppercase  sm:tracking-widest font-sans text-theme-800 hover:text-white pointer-events-auto whitespace-nowrap  transition-all" 
+              >
+                {% trans "Start" %}
+              </button>
+            </div>
+          </div>
+          </div>
+
+          <div class="fixed bottom-0 left-0 right-0 pointer-events-none w-screen flex justify-end items-end sm:px-6 py-6">
+
+            <button 
+              id="loading-audio-on-button"
+              class="cursor-pointer flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90  transition-all" 
+            >
+              <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="mr-2"><title>Mute Audio</title><path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>
+            </button>
+            <button 
+              id="loading-audio-mute-button"
+              class="hidden cursor-pointer flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90 transition-all" 
+            >
+              <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="mr-2"><title>Unmute Audio</title><path fill="currentColor" d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z" /></svg>
+
+            </button>
+          </div>
+
+      </div>
+
+  </div>
+  <div 
+      id="loading-screen"
+      class="fixed top-0 right-0 bottom-0 left-0 z-50 w-screen h-screen flex justify-center items-center bg-theme-100 bg-cover"
+      style="
+      "
+    >
+      <div
+        id="loading-canvas"
+        class="fixed top-0 left-0 right-0 bottom-0 w-screen h-screen z-10"
+        style="
+          background-color: #e2dac9;
+          background-image: url(
+            'https://storage.googleapis.com/spaceshare/{{tour.thumbnail}}'
+          );
+          background-size: cover;
+          background-position: center;
+        "
+      ></div>
+
+      <div 
+        class="fixed top-0 right-0 bottom-0 left-0 w-screen h-screen bg-cover z-10"
+        style="
+          background-color: rgba(61, 59, 65, 0.9); 
+        "
+      >
+      </div>
+
+      <div 
+        class="fixed top-0 right-0 bottom-0 left-0 w-screen h-screen bg-cover z-10"
+        style="
+          box-shadow: inset 0 0 90px 50px rgba(0, 0, 0, 0.6);
+        "
+      >
+      </div>
+
+
+      <div class="relative z-30 max-w-3xl w-full h-full py-2 px-2 flex items-center justify-center flex-col">
+          <div 
+              id="title-outer"
+              class=" text-center "
+          >
+              <h1 
+                  class="inline-block  text-white text-center pt-6 pb-2 mt-1 transition-all"
+              >
+                  <span 
+                      id="loading-title" 
+                      class="block text-2xl sm:text-5xl tracking-widest"
+                      style="font-variant: small-caps;"
+                  >
+                      {{ tour.title }}
+                  </span>
+              </h1>
+          </div>
+          <div class=" my-6 sm:my-12 flex items-center justify-center flex-nowrap">
+              <p 
+                  id="loading-subtitle"
+                  class=" block w-full max-w-2xl text-center font-serif text-theme-200 text-gray-300 italic text-sm sm:text-xl transition-all"
+              >
+              	{{ tour.description|truncatewords_html:20 }}
+              </p>
+          </div>
+          <div 
+              id="loading-text-notification"
+              class="opacity-50 mt-2 flex items-center justify-center flex-wrap sm:flex-nowrap"
+          >
+              <span class="block text-white text-xs sm:text-sm uppercase tracking-widest" >
+                 {% trans "Loading" %} <span id="loading-text-notification-percent">0%</span>
+              </span>
+          </div>
+
+          <div class="fixed bottom-0 left-0 right-0 pointer-events-none w-screen flex justify-end items-end sm:px-6 py-6">
+
+            <button 
+              id="loading-audio-on-button"
+              class="cursor-pointer flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90  transition-all" 
+            >
+              <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="mr-2"><title>Mute Audio</title><path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>
+            </button>
+            <button 
+              id="loading-audio-mute-button"
+              class="hidden cursor-pointer flex items-center justify-center bg-transparent hover:bg-theme-800/20 py-2 px-2 text-xs uppercase font-sans text-white pointer-events-auto whitespace-nowrap opacity-70 hover:opacity-90 transition-all" 
+            >
+              <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" class="mr-2"><title>Unmute Audio</title><path fill="currentColor" d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z" /></svg>
+
+            </button>
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="fixed bottom-0 right-4 sm:right-8 z-50" style="margin-bottom:-2px">
+    <span class="text-xs  text-white " >
+      <span class="opacity-50">Built with</span> <a href="https://spaceshare.ai/" class="underline hover:no-underline opacity-50 hover:opacity-100">SpaceShare</a>. 
+    </span>
+  </div>
+
+  <!-- making up for any classes in various files that might not be watched by postcss/webpack --> 
+  <div class="hidden underline hover:no-underline hover:bg-theme-800/10"></div>
+
+  {% get_current_language as LANGUAGE_CODE %}
+  {{LANGUAGE_CODE|json_script:"i18n_lang_code" }}
+
+  {{space.space_data|json_script:"space_data" }}
+  {{space_mesh|json_script:"space_mesh" }}
+  {{space.version|json_script:"space_version" }}
+  {{tour.tour_data|json_script:"tour_data" }}
+  {{tour.continue_exploring_link|json_script:"continue_exploring_link" }}
+  {{tour.space_custom|json_script:"space_custom" }}
+
+  {% render_bundle 'main' 'js' %}
+
+{% if user.is_authenticated and user.id == 1 %}
+  <div class="fixed bottom-8 left-20">
+    <form id="tour_edit_form" method="post" action="{% url 'tour_set_tour_json' id=tour.id %}">
+        {% csrf_token %}
+        <input type="hidden" name="tour_data" id="tour_data_input">
+        <button type="button" onclick="window.app.submitFormTour()" class="border border-theme-800 bg-theme-100 rounded-lg px-2 py-1 text-xs uppercase font-sans-bold tracking-widest">Save Changes</button>
+    </form>
+  </div>
+{% endif %}
+{% endblock %}
+
+

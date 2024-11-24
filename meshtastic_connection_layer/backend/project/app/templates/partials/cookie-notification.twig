@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<div id="cookie-notification" class="flex fixed bottom-2 left-2 sm:bottom-8 sm:left-8 rounded-lg bg-theme-100 shadow-xl text-theme-700 text-xs sm:text-sm z-50 pl-4 pr-2 py-2 z-50 cursor-pointer items-center justify-center"  onclick="acceptCookies()" style="background: #F2EEEA">
+  <span class="block">
+    {% trans "We <a href='https://spaceshare.ai/privacy' class='underline hover:no-underline'>use minimal cookies</a> to make this website better." %}
+  </span> 
+  <span class=" block ml-3 py-2 px-3 rounded-lg bg-theme-700 hover:bg-theme-800 text-theme-100 font-sans-bold uppercase" style="font-size:9px; background:#78715e; color: #F2EEEA;">
+    {% trans "Accept" %}
+  </span>
+</div>
+<script type="text/javascript">
+  const setCookie = (cName, cValue, expDays) => {
+    let date = new Date();
+    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = cName + "=" + cValue + "; " + expires + "; domain=.spaceshare.ai";
+  }
+  const acceptCookies = () => {
+    const cookieNotificationElem = document.getElementById('cookie-notification');
+    cookieNotificationElem.classList.add('hidden');
+
+    // Apply setCookie
+    setCookie('app_cookies_accepted', true, 365);
+  }
+</script>
