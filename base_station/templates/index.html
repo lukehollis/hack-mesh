@@ -121,7 +121,7 @@
                fillOpacity: 0.1,  // Make the circles transparent (0.0 is fully transparent)
                 opacity: 1,        // Set the border opacity to fully visible
                 radius:  {{ marker.radius }}
-            }).addTo(map).bindPopup("<b>{{ marker.name }} at {{marker.type}}</b><br>pow: {{marker.power}}, freq: {{marker.frequency}}")
+            }).addTo(map).bindPopup("{{ marker.name }}<br><b>{{marker.type}} at {{marker.timestamp}}</b><br>pow: {{marker.power}}, freq: {{marker.frequency}}")
                     .openPopup();
             {% endfor %}
         {% else %}
