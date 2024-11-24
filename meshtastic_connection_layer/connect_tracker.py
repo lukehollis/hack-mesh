@@ -1,5 +1,6 @@
 import meshtastic.ble_interface
 import time
+import requests
 import json
 
 def connect_to_tracker(address, max_retries=3, retry_delay=2):
@@ -16,9 +17,27 @@ def connect_to_tracker(address, max_retries=3, retry_delay=2):
                 time.sleep(retry_delay)
     return None
 
+def fetch_alerts(endpoint):
+    try:
+        response = requests.get(endpoint)
+        response.raise_for_status()  # Raise an error for bad HTTP status
+        return response.json()
+    except Exception as e:
+        print(f"Failed to fetch alerts: {e}")
+        return {}
+
+def send_message(iface, data):
+    try:
+        message = json.dumps(data)
+        iface.sendText(message)
+        print(f"Sent message: {message}")
+    except Exception as e:
+        print(f"Failed to send message: {e}")
+
 def main():
     # Your device's Bluetooth address
-    address = "23488746-A88A-6DC3-CA05-40B01837B853"
+    address = "0F6EDECA-DE9B-D560-46B2-7383161B1F1D"
+    endpoint = "http://104.197.210.87:5000/alerts"
     
     # Before connecting, remind user to check device pairing
     print("Please ensure the Meshtastic device is powered on and paired with your computer")
@@ -27,24 +46,26 @@ def main():
     iface = connect_to_tracker(address)
     if iface:
         try:
-            # Test the connection
-            data = {
-                "device": "FM radio",
-                "frequency center": 94.855,
-                "bandwidth": 0.295,
-                "power": -59.35,
-                "date": "11-23-2024 13:51:47.215639",
-                "probability": 1.0,
-                "GPS coords": "[0.0, 0.0]"
-            }
-            
-            # Keep the connection alive and send message every 10 seconds
+            sent_ids = set()  # Track sent alert IDs to avoid resending
             while True:
-                message = json.dumps(data)
-                # iface.sendText("bottle of life")
-                iface.sendText(message)
-                print("Test message sent successfully")
-                time.sleep(15)
+                alerts = fetch_alerts(endpoint)
+                if alerts:
+                    for alert_id, alert_data in alerts.items():
+                        if alert_id not in sent_ids:
+                            # Prepare the alert data for sending
+                            data = {
+                                "device": alert_data[0],
+                                "frequency": alert_data[1],
+                                "power": alert_data[2],
+                                "date": alert_data[3],
+                                "GPS coords": alert_data[4]
+                            }
+                            send_message(iface, data)
+                            sent_ids.add(alert_id)
+                            time.sleep(15)  # Wait 30 seconds between messages
+                else:
+                    print("No new alerts found.")
+                time.sleep(10)  # Poll for new alerts every 10 seconds
         except Exception as e:
             print(f"Error during operation: {e}")
         finally:
