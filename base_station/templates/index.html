@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPS Coordinates</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+    <title>Base Station (Batone)</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         /* Styling the map */
@@ -24,18 +25,77 @@
             text-align: center;
         }
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>GPS Coordinates on Map</h1>
+    <!-- Navbar -->
+<nav class="bg-gray-800 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-white text-2xl font-bold">
+            📡 Base Station (Batone)
+        </div>
+        
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-4">
+            
+<!--             <a href="#" class="text-white hover:text-gray-400">About</a>
+            <a href="#" class="text-white hover:text-gray-400">Services</a>
+            <a href="#" class="text-white hover:text-gray-400">Contact</a> -->
+            <a href="https://github.com/lukehollis/hack-mesh" class="text-white hover:text-gray-400"><i class="fab fa-github text-2xl"></i></a>
+        </div>
 
+        <!-- Hamburger Menu (visible on mobile) -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden bg-gray-800 p-4 space-y-4">
+<!--     <a href="#" class="text-white hover:text-gray-400">Home</a>
+    <a href="#" class="text-white hover:text-gray-400">About</a>
+    <a href="#" class="text-white hover:text-gray-400">Services</a> -->
+    <a href="https://github.com/lukehollis/hack-mesh" class="text-white hover:text-gray-400"><i class="fab fa-github text-2xl"></i></a>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
     
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
 
     {% if warning != '' %}
         <p>{{warning}}</p>
 
     {% else %}
         <!-- Map container -->
-        <div id="map"></div>
+        <div class="max-w-full mx-auto bg-white shadow-lg rounded-lg p-4">
+        <h2 class="text-xl font-semibold text-center mb-4">Detected targets</h2>
+        <div id="map" class="w-full rounded-lg shadow-md"></div>
+    </div>
     {% endif %}
 
 
@@ -54,13 +114,14 @@
         // Add markers to the map for each coordinate pair
 
         {% if warning == ''%}
-            {% for key, values in coordinates.items() %}
-                {% set coords = values[4][1:-1].split(',') %}
-                var lat = parseFloat("{{ coords[0] }}");
-                var lon = parseFloat("{{ coords[1] }}");
-
-                L.marker([lat, lon]).addTo(map)
-                    .bindPopup("<b>{{ values[0] }}</b><br>{{ values[3] }}<br>{{ values[1] }}, {{ values[2] }}")
+            {% for marker in markers %}
+                L.circle([{{ marker.lat }}, {{ marker.lon }}], {
+                color: '{{ marker.color }}',
+                fillColor: '{{ marker.color }}',
+               fillOpacity: 0.1,  // Make the circles transparent (0.0 is fully transparent)
+                opacity: 1,        // Set the border opacity to fully visible
+                radius:  {{ marker.radius }}
+            }).addTo(map).bindPopup("{{ marker.name }}<br><b>{{marker.type}} at {{marker.timestamp}}</b><br>pow: {{marker.power}}, freq: {{marker.frequency}}")
                     .openPopup();
             {% endfor %}
         {% else %}
@@ -69,3 +130,4 @@
     </script>
 </body>
 </html>
+
