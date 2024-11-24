@@ -1,4 +1,11 @@
-# PainlessMesh
+# Project: Batone
+
+By _RAD Ninjas_
+
+Based on [PainlessMesh](https://gitlab.com/painlessMesh/painlessMesh)
+
+Simplest way to deploy a mesh of sensors for resilient communication defense / offense 
+with packaged goodies. You can think of it as a mesh station.
 
 ## Intro to painlessMesh
 
