@@ -1,4 +1,4 @@
-# Project: Batone
+# Project: DropMesh
 
 By _RAD Ninjas_
 
@@ -12,6 +12,9 @@ with packaged goodies. You can think of it as a mesh station.
 - cd base_station/
 - pip install -r requirements.txt
 - flask --debug run
+
+- run `meshtastic --ble-scan` to see available devices
+- change address of device in main and run python receive_messages.py to receive messages, 
 
 This will start a server with maps reading from a json file being written by 
 an ESP-32 connected to the PC
