@@ -2,12 +2,12 @@
 
 By _RAD Ninjas_
 
-Based on [PainlessMesh](https://gitlab.com/painlessMesh/painlessMesh)
+Based on [PainlessMesh](https://gitlab.com/painlessMesh/painlessMesh) and [Meshtastic](https://meshtastic.org/)
 
-Simplest way to deploy a mesh of sensors for resilient communication defense / offense 
-with packaged goodies. You can think of it as a mesh station.
+Low-powered mesh network that enables critical communications in potentially challenging networking environments. It provides a mesh network simulator that you can deploy in Unity also for testing your installation.
 
-## Base station
+
+## Base station - Web Frontend 
 
 - cd base_station/
 - pip install -r requirements.txt
@@ -18,6 +18,15 @@ with packaged goodies. You can think of it as a mesh station.
 
 This will start a server with maps reading from a json file being written by 
 an ESP-32 connected to the PC
+
+## Unity 
+
+This project contains materials for a Unity-based mesh network simulator implementing a network topology where nodes establish connections based on k-nearest neighbors and distance-based constraints. 
+
+To get setup, first integrate the `MeshController` and `MeshNode` components into your 2d or 3d environment as needed. Configure the kNeighbors variable on the MeshController and distance threshold if desired. Next, choose a `MeshEventType` and then simply call the static `MeshNetwork.SendEvent(MeshEventType.SENSOR_DATA, sensorPayload)` method from any script by passing in the event type and data. 
+
+The event will automatically propogate through the mesh based on your configuration, and you can setup a root node or other custom implementations easily.
+
 
 ## Intro to painlessMesh
 
